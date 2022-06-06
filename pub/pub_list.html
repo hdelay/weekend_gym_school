@@ -179,14 +179,11 @@
         if(menuTableList[i].con === '완료'){
             curr_n++;
         }
-        //페이지 로드되고 나서 실행
-        $(function(){
-            //작업이 완료된 페이지를 제외하고 나머지 표시
-            $('.con').not('.con:contains(완료)').css('color','red');
+        //작업이 완료된 페이지를 제외하고 나머지 표시
+        $('.con').not('.con:contains(완료)').css('color','red');
             
-            // 날짜가 오늘날짜와 같으면 화면에 표시
-            $('.date:contains('+ today +')').css('color','red');
-        });
+        // 날짜가 오늘날짜와 같으면 화면에 표시
+        $('.date:contains('+ today +')').css('color','red');
     }
     $('.curr_n').text(curr_n);
 
