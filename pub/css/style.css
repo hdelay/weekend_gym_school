@@ -1211,6 +1211,7 @@ footer {
         width: 100%;
     }
     .box_main_bottom .left {
+        width: 100%;
         margin-top: 0;
         padding: 0;
     }
@@ -1230,6 +1231,7 @@ footer {
     }
     .box_main_bottom .left .box_main_search {
         min-width: auto;
+        width: 100%;
     }
     .box_main_bottom .left .box_main_notice {
         width: 100%;
