@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신나는 주말체육학교 list</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<style>
+        table {border-collapse:collapse;border-spacing:0;}
+        table th, strong {font-weight:normal;}
+        body{margin:20px;}
+        h1{margin:0 0 10px 0;}
+        a {display: block; text-decoration:none;}
+        a:hover {text-decoration:underline;}
+        .header {display: flex; justify-content: space-between; flex-wrap: wrap;}
+        hr {width: 100%;}
+        .header h1 {display: flex; align-items: center;}
+        .header > div {background-color: #f3f3f3; padding: 0 30px; border-radius: 50px;}
+        .header div p {text-align: right; margin: 0; line-height: 30px; font-size: 14px;}
+        .list_w table {width:100%;margin:20px auto;border-top: solid 2px #555;border-collapse:collapse;border-spacing:0;font-size:13px;text-align:center;}
+        .list_w table tr:hover {background:#f3f3f3;}
+        .list_w table th {padding: 10px 0;	border: solid 1px #ddd;background: #efefef;vertical-align:middle;}
+        .list_w table td {padding: 8px 3px;border:solid 1px #ccc;vertical-align:middle;}
+        .list_w table td:nth-child(2) {text-align: left;}
+        .list_w table tr.on td {background: rgb(227, 235, 227);}
+        .list_w table tr.title th {background:#666;color:#fff;font-size:18px;border:0;padding-top:7px;}
+        .lastmdate {color: #1155CC;}
+        .stand_by {color:#777;}
+        .ing {color:#4848D4;}
+        .end {color:green;}
+        .list_w table td.link,
+        .list_w table td.etc{text-align: left; padding-left:10px;}
+        #list th{background: #fff;}
+</style>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>신나는 주말체육학교</h1>
+            <div>
+                <p>완료된 페이지 : <span class="curr_n"></span>page / Total : <span class="total_n"></span>page</p>
+                <p>진행율 : <span class="per"></span></p>
+            </div>
+            <hr />
+        </div>
+
+        <div class="list_w">
+            <table class="codinglist">
+                <colgroup>
+                    <col width="4%" />
+                    <col width="13%" />
+                    <col width="13%" />
+                    <col width="13%" />
+                    <col width="20%" />
+                    <col width="8%" />
+                    <col width="5%" />
+                    <col width="*" />
+                </colgroup>
+                <thead>
+                    <tr class="title">
+                        <th colspan="8">신나는 주말체육학교(반응형)</th>
+                    </tr>
+                    <tr>
+                        <th>no.</th>
+                        <th>1depth</th>
+                        <th>2depth</th>
+                        <th>3depth</th>
+                        <th>경로</th>
+                        <th>날짜</th>
+                        <th>상태</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    let menuTableHeader = ['type','1Depth','2Depth','3Depth','경로','날짜','상태','비고']
+
+    // 객체 초기화
+    let menuDefault = {
+        type:'',
+        depth1:'',
+        depth2:'',
+        depth3:'',
+        path:'',
+        date:'',
+        con:'',
+        etc:''
+    };
+
+    // 배열 추가
+    let menuTableList = [
+        //value값이 없으면 빈문자열로 남기기
+        {
+            depth1:'퍼블리싱 가이드',
+            depth2:'',
+            depth3:'',
+            path:'./html/pub_guide.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'메인',
+            depth2:'',
+            depth3:'',
+            path:'./html/main.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'1. 소개마당',
+            depth2:'사업개요',
+            depth3:'',
+            path:'./html/page_business.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'2. 연락처정보',
+            depth2:'공공스포츠클럽 정보',
+            depth3:'',
+            path:'./html/page_search_sports_club.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
+            depth2:'시도/시군구',
+            depth3:'',
+            path:'./html/page_search_city.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
+            depth2:'전화번호검색',
+            depth3:'',
+            path:'./html/page_search_tell.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        }
+    ];
+    
+    // 작업리스트 화면에 출력
+    let html;
+    for(let i=0; i < menuTableList.length; i++){
+        html += '<tr>'
+        html += '<td class="no">'+(i+1)+'</td>'
+        html += '<td>'+menuTableList[i].depth1+'</td>'
+        html += '<td>'+menuTableList[i].depth2+'</td>'
+        html += '<td>'+menuTableList[i].depth3+'</td>'
+        html += '<td class="link"><a href='+menuTableList[i].path+' target="_blank">'+menuTableList[i].path+'</a></td>'
+        html += '<td class="date">'+menuTableList[i].date+'</td>'
+        html += '<td class="con">'+menuTableList[i].con+'</td>'
+        html += '<td class="etc">'+menuTableList[i].etc+'</td>'
+        html += '</tr>'
+    };
+    //현재 날짜 구하기 YYYY-MM-DD 형식
+    let time = new Date();
+    let year = time.getFullYear();
+    let month = ('0' + (time.getMonth() + 1)).slice(-2);
+    let day = ('0' + time.getDate()).slice(-2);    
+    let today = year + '-' + month + '-' + day;
+
+    //완료된 페이지 개수 구하기
+    let curr_n = 0;
+    for(let i=0; i < menuTableList.length; i++) {
+        if(menuTableList[i].con === '완료'){
+            curr_n++;
+        }
+        //페이지 로드되고 나서 실행
+        $(function(){
+            //작업이 완료된 페이지를 제외하고 나머지 표시
+            $('.con').not('.con:contains(완료)').css('color','red');
+            
+            // 날짜가 오늘날짜와 같으면 화면에 표시
+            $('.date:contains('+ today +')').css('color','red');
+        });
+    }
+    $('.curr_n').text(curr_n);
+
+    $('#list').html(html);
+    
+    // 전체 페이지 개수 구하기
+    let total_n = $('#list tr').length;
+    $('.total_n').text(total_n);
+
+    // 진행률 나타내기
+    $('.per').text(Math.floor((curr_n/total_n)*100) + '%');
+</script>
+</html>

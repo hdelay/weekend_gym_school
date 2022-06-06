@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼블리싱 가이드</title>
+
+    <!-- pub:css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- pub:js -->
+    <script src="../js/root.js"></script>
+    <script defer src="../js/common.js"></script>
+
+    <style>
+        .wrap_guide {
+            display: flex;
+            overflow-y: auto;
+            flex-wrap: wrap;
+            padding: 40px;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+        .btn_guide {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+        .btn_guide h1 {
+            padding-bottom: 30px;
+        }
+        .btn_guide h1 a {
+            display: block;
+            font-size: var(--font-common);
+        }
+        .btn_guide ul {
+            display: flex;
+            flex-direction: column;
+        }
+        .btn_guide ul li + li {
+            margin-top: 20px;
+        }
+
+        .box_guide {
+            width: 100%;
+            padding-left: 180px;
+            box-sizing: border-box;
+        }
+        .box_guide .box_group {
+            border: 1px solid #ddd;
+            padding: 20px 30px;
+        }
+        .box_guide .box_group:hover {
+            border: 1px solid #000;
+        }
+        .box_guide .box_group + .box_group {
+            margin-top: 30px;
+        }
+        .box_guide .box_group > .box_item > h2 {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-size: var(--font-common);
+            font-weight: 300;
+        }
+        .box_guide .box_group > .box_item > h3{
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: var(--font-s);
+            font-weight: 300;
+        }
+        .box_item_cont > ul > li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrap_guide">
+
+    <div class="btn_guide">
+        <h1><a href="">Design Guide</a></h1>
+        <ul>
+            <li><a href="">로고</a></li>
+            <li><a href="">폰트</a></li>
+            <li><a href="">컬러</a></li>
+            <li><a href="">타이틀</a></li>
+            <li><a href="">버튼</a></li>
+            <li><a href="">Form</a></li>
+            <li><a href="">Form Grid</a></li>
+            <li><a href="">테이블</a></li>
+            <li><a href="">리스트</a></li>
+            <li><a href="">팝업</a></li>
+        </ul>
+    </div>
+
+    <div class="box_guide">
+        <!-- 로고 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>로고</h2>
+                <div class="box_item_cont">
+                    <h1 class="logo">
+                        <a href="" title="로고">
+                            <span>방과후 스포츠프로그램</span>
+                            <strong>신나는 주말체육학교</strong>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <!-- 폰트 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>폰트</h2>
+                <div class="box_item_cont">
+                    <p style="font-size: var(--font-l); font-weight: 100;">신나는 주말체육학교 :: NotoSansKR 100</p>
+                    <p style="font-size: var(--font-l); font-weight: 200;">신나는 주말체육학교 :: NotoSansKR 200</p>
+                    <p style="font-size: var(--font-l); font-weight: 300;">신나는 주말체육학교 :: NotoSansKR 300</p>
+                    <p style="font-size: var(--font-l); font-weight: 400;">신나는 주말체육학교 :: NotoSansKR 400</p>
+                    <p style="font-size: var(--font-l); font-weight: 500;">신나는 주말체육학교 :: NotoSansKR 500</p>
+                    <p style="font-size: var(--font-l); font-weight: 600;">신나는 주말체육학교 :: NotoSansKR 600</p>
+                    <p style="font-size: var(--font-l); font-weight: 700;">신나는 주말체육학교 :: NotoSansKR 700</p>
+                </div>
+            </div>
+        </div>
+        <!-- 컬러 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>컬러</h2>
+                <div class="box_item_cont">
+                    <ul>
+                        <li>메인 컬러 : <span style="display: inline-block; background-color: var(--main-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                        <li>메인 hover 컬러 : <span style="display: inline-block; background-color: var(--main-hover-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                        <li>서브 컬러 : <span style="display: inline-block; background-color: var(--sub-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                        <li>버튼 컬러 : <span style="display: inline-block; background-color: var(--btn-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                        <li>서브 bg 컬러 : <span style="display: inline-block; background-color: var(--sub-bg-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                        <li>서브 폰트 컬러 : <span style="display: inline-block; background-color: var(--sub-font-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                        <li>서브 버튼 컬러 : <span style="display: inline-block; background-color: var(--sub-btn-color); width: 100px; height: 24px; margin-left: 10px;"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 타이틀 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>타이틀</h2>
+                <div class="box_item_cont">
+                    <div class="box_tit">
+                        <h2><strong>전화번호검색</strong></h2>
+                    </div>
+                    <div class="box_tit">
+                        <h3>
+                            <strong>전화번호 검색</strong>
+                            <span>각 시·군·구에서 프로그램을 운영하고 있으므로 문의하고자 하는 지역을 확인하여 전화 문의 바랍니다.</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 버튼 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>버튼</h2>
+                <div class="box_item_cont">
+                    <div class="box_btn" style="width: 200px;">
+                        <a href="javascript:void(0);" data-animation="ripple">자세히보기</a>
+                    </div>
+                    <div class="box_btn" style="width: 200px; margin-top: 5px;">
+                        <button data-animation="ripple">검색하기</button>
+                    </div>
+                    <div class="box_btn" style="width: 200px; margin-top: 5px;">
+                        <a href="javascript:void(0);" class="email" data-animation="ripple">이메일 문의하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Form -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>Form</h2>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+            <div class="box_item">
+                <h3>인풋박스</h3>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+            <div class="box_item">
+                <h3>데이트피커</h3>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+            <div class="box_item">
+                <h3>셀렉트박스</h3>
+                <div class="box_item_cont">
+                    <div class="box_select">
+                        <select id="">
+                            <option value="">시도선택</option>
+                            <option value="">시도선택</option>
+                            <option value="">시도선택</option>
+                            <option value="">시도선택</option>
+                        </select>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="box_item">
+                <h3>라디오박스</h3>
+                <div class="box_item_cont">
+
+                    <div class="box_rdo_group">
+                        <div class="box_rdo">
+                            <input type="radio" id="rdo_01" name="rdo_group">
+                            <label for="rdo_01">시군구체육회</label>
+                        </div>
+                        <div class="box_rdo">
+                            <input type="radio" id="rdo_02" name="rdo_group">
+                            <label for="rdo_02">공공스포츠클럽</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box_item">
+                <h3>체크박스</h3>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Form Grid -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>Form Grid</h2>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- 테이블 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>테이블</h2>
+                <div class="box_item_cont">
+                    <div class="table_data">
+                        <table>
+                            <caption>데이터 폼</caption>
+                            <colgroup>
+                                <col width="5%"/>
+                                <col width="8%"/>
+                                <col width="10%"/>
+                                <col width="10%"/>
+                                <col width="13%"/>
+                                <col width="21%"/>
+                                <col width=""/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO.</th>
+                                    <th scope="col">시도</th>
+                                    <th scope="col">시군구</th>
+                                    <th scope="col">담당자명</th>
+                                    <th scope="col">문의연락처</th>
+                                    <th scope="col">이메일</th>
+                                    <th scope="col">홈페이지</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="agn_c">서울</td>
+                                    <td class="agn_c">영등포구</td>
+                                    <td class="agn_c">전성훈</td>
+                                    <td class="agn_c">02-3461-3999</td>
+                                    <td>spcosa@hanmail.com</td>
+                                    <td><a href="http://dhsports.or.kr/">http://dhsports.or.kr/</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="agn_c">서울</td>
+                                    <td class="agn_c">영등포구</td>
+                                    <td class="agn_c">전성훈</td>
+                                    <td class="agn_c">02-3461-3999</td>
+                                    <td>spcosa@hanmail.com</td>
+                                    <td><a href="http://dhsports.or.kr/">http://dhsports.or.kr/</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="agn_c">서울</td>
+                                    <td class="agn_c">영등포구</td>
+                                    <td class="agn_c">전성훈</td>
+                                    <td class="agn_c">02-3461-3999</td>
+                                    <td>spcosa@hanmail.com</td>
+                                    <td><a href="http://dhsports.or.kr/">http://dhsports.or.kr/</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="agn_c">서울</td>
+                                    <td class="agn_c">영등포구</td>
+                                    <td class="agn_c">전성훈</td>
+                                    <td class="agn_c">02-3461-3999</td>
+                                    <td>spcosa@hanmail.com</td>
+                                    <td><a href="http://dhsports.or.kr/">http://dhsports.or.kr/</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="agn_c">서울</td>
+                                    <td class="agn_c">영등포구</td>
+                                    <td class="agn_c">전성훈</td>
+                                    <td class="agn_c">02-3461-3999</td>
+                                    <td>spcosa@hanmail.com</td>
+                                    <td><a href="http://dhsports.or.kr/">http://dhsports.or.kr/</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 리스트 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>리스트</h2>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- 팝업 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2>팝업</h2>
+                <div class="box_item_cont">
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
