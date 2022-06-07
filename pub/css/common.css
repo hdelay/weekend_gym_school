@@ -131,6 +131,7 @@ select::-ms-expand {
     height: 100%;
     border: 1px solid #fff;
     border-radius: 5px;
+    background-color: #fff;
     font-size: var(--font-common);
     color: #999;
 }
