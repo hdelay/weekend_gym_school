@@ -105,7 +105,7 @@ header > nav > ul > li > a {
 header:hover > nav > ul > li > a {
     color: #fff;
 }
-header > nav > ul > li ul {
+header > nav > ul > li .box_submenu {
     display: flex;
     overflow: hidden;
     flex-wrap: wrap;
@@ -118,11 +118,27 @@ header > nav > ul > li ul {
     background: #222;
     transition: .2s;
 }
-header > nav > ul > li.on ul {
+header > nav > ul > li:nth-child(4) .box_submenu ul {
+    justify-content: flex-end;
+    padding-right: 9.4%;
+    box-sizing: border-box;
+}
+header > nav > ul > li:nth-child(5) .box_submenu ul {
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
+header > nav > ul > li ul {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 671px;
+    transform: translateX(-41%);
+}
+header > nav > ul > li.on .box_submenu {
     height: 45px;
 }
-header > nav > ul > li ul li:first-child {
-    margin-left: 40px;
+header > nav > ul > li ul {
+    display: flex;
 }
 header > nav > ul > li ul li + li {
     margin-left: 40px;
