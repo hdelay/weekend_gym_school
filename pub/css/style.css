@@ -100,6 +100,7 @@ header > nav > ul > li > a {
     align-items: center;
     height: 100%;
     padding: 0 30px;
+    font-size: 20px;
     color: #fff;
 }
 header:hover > nav > ul > li > a {
@@ -131,7 +132,8 @@ header > nav > ul > li ul {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 671px;
+    width: 730px;
+    height: 100%;
     transform: translateX(-41%);
 }
 header > nav > ul > li.on .box_submenu {
@@ -219,6 +221,120 @@ header > nav > ul > li ul li:hover a::after {
 .box_allmenu {
     display: none;
     position: absolute;
+}
+
+/* 전체메뉴 */
+.box_allmenu {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+}
+.box_allmenu .box_allmenu_cont {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.box_allmenu .box_allmenu_cont .box_allmenu_btn a {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 25px;
+    height: 25px;
+}
+.box_allmenu .box_allmenu_cont .box_allmenu_btn a span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+}
+.box_allmenu .box_allmenu_cont .box_allmenu_btn a span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+.box_allmenu .box_allmenu_cont .box_allmenu_btn a span:nth-child(2) {
+    transform: rotate(-45deg) translate(-6px, 7px);
+}
+.box_allmenu .box_allmenu_info {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 57px;
+}
+.box_allmenu .box_allmenu_info .logo a {
+    width: auto;
+    padding-left: 93px;
+    background: url(../images/content/allmenu_logo.png) no-repeat left center;
+    background-size: 83.5px 83.5px;
+}
+.box_allmenu .box_allmenu_info .logo span {
+    font-size: 23px;
+    color: #000;
+}
+.box_allmenu .box_allmenu_info .logo strong {
+    font-size: 35px;
+    color: #000;
+}
+.box_allmenu .box_allmenu_info ul {
+    display: none;
+}
+.box_allmenu nav {
+    width: 866px;
+    margin: 0 auto;
+}
+.box_allmenu nav > ul {
+    margin: 0 -20px;
+}
+.box_allmenu nav > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 33px;
+    right: 20px;
+    width: 10px;
+    height: 6px;
+    background: url(../images/ico/ico_arrow_select.png) no-repeat center;
+    background-size: 100% 100%;
+    transition: .2s;
+}
+.box_allmenu nav > ul > li.on > a::after {
+    transform: rotate(180deg);
+}
+.box_allmenu nav > ul > li {
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+.box_allmenu nav > ul > li:first-child {
+    border-top: 1px solid #eee;
+}
+.box_allmenu nav > ul > li > a {
+    display: block;
+    padding: 25px 20px;
+    font-weight: 600;
+}
+.box_allmenu nav > ul > li > ul {
+    display: none;
+}
+.box_allmenu nav > ul > li > ul > li > a {
+    display: block;
+    padding: 20px 40px;
+    margin: 0;
+    background-color: #eee;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+}
+.box_allmenu nav > ul > li > ul > li:last-child > a {
+    border-bottom: none;
 }
 
 /* main */
@@ -337,7 +453,7 @@ header > nav > ul > li ul li:hover a::after {
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    width: 100%;
+    width: 485px;
     height: 100%;
     padding: 0 70px 0 100px;
     box-sizing: border-box;
@@ -434,7 +550,7 @@ header > nav > ul > li ul li:hover a::after {
     color: #fff;
 }
 .box_main_quick ul li a .right strong .new {
-    display: flex;
+    display: none;
     position: absolute;
     top: 0;
     right: -26px;
@@ -573,7 +689,7 @@ header > nav > ul > li ul li:hover a::after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 451px;
+    width: 485px;
 }
 .box_main_bottom .right .box_main_sns ul {
     display: flex;
@@ -772,9 +888,9 @@ footer {
     top: 50%;
     right: -25px;
     width: 1px;
-    height: 17px;
+    height: 12px;
     background-color: #878787;
-    transform: translateY(-43%);
+    transform: translateY(-30%);
 }
 .box_footer_top .box_footer_link dd:last-child::after {
     display: none;
@@ -787,33 +903,59 @@ footer {
 }
 .box_footer_top .box_family > ul {
     position: relative;
-    max-width: 151px;
+    max-width: 175px;
 }
 .box_footer_top .box_family > ul > li > a {
     display: block;
+    position: relative;
     box-sizing: border-box;
-    background: url(../images/ico/ico_familysite.png) no-repeat 90% center;
-    padding: 10px;
+    padding: 10px 20px;
     padding-right: 45px;
+    border: 1px solid transparent;
     font-size: 18px;
     font-weight: 500;
     color: #fff;
+    transition: .2s;
+}
+.box_footer_top .box_family > ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/ico/ico_familysite.png) no-repeat center;
+    transform: translateY(-50%);
+    transition: .2s;
+}
+.box_footer_top .box_family > ul > li.on > a {
+    border: 1px solid rgb(112 112 112);
+}
+.box_footer_top .box_family > ul > li.on > a::after {
+    transform: translateY(-50%) rotate(225deg);
 }
 .box_footer_top .box_family > ul > li > ul {
     display: none;
     position: absolute;
-    top: -186px;
+    bottom: 0;
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    background-color: #fff;
 }
 .box_footer_top .box_family > ul > li.on > ul {
     display: block;
+    margin-bottom: 48px;
 }
 .box_footer_top .box_family > ul > li > ul li a {
     display: flex;
-    padding: 10px;
+    padding: 4px 10px;
+    background-color: #fff;
+    font-size: 12px;
+}
+.box_footer_top .box_family > ul > li > ul li:hover a {
+    background-color: var(--sub-color);
+    color: #fff;
 }
 .box_footer_bottom {
     display: flex;
@@ -871,66 +1013,85 @@ footer {
 
 
 @media screen and (max-width: 1500px) {
-    /* 메인 */
-    .box_main_quick ul li a .left {
-        width: 100%;
-    }
-    .box_main_quick ul li a .left::after {
-        left: -36px;
-    }
-    .box_main_quick ul li a .left strong {
+    /* header */
+    header > nav > ul > li > a {
+        padding: 0 16px;
         font-size: 20px;
     }
-    .box_main_quick ul li a .left strong br {
-        display: none;
+    /* 메인 */
+    .box_main_quick ul li a .left {
+        width: 173px;
     }
-    .box_main_quick ul li a .right {
-        width: 100%;
-        padding: 0;
-        padding-top: 10px;
+    .box_main_quick ul li a .left::after {
+        left: -44px;
     }
-    .box_main_quick ul li a .right strong {
-        font-size: 60px;
+    .box_main_quick ul li a .left strong {
+        display: block;
+        font-size: 30px;
     }
     .box_main_top .box_main_quick ul li a {
-        justify-content: space-between;
-        padding: 13% 10% 13% 20%;
+        justify-content: center;
+        width: 340px;
+        padding: 0;
     }
-    .box_main_bottom {
-        height: auto;
+    .box_main_quick ul li a .right {
+        display: none;   
     }
     .box_main_bottom .left {
-        width: calc(100% - 21.4%);
+        width: calc(100% - 340px);
         flex-wrap: wrap;
+        padding-right: 20px;
+        margin-top: -125px;
     }
-    .box_main_bottom .left .box_main_notice {
-        width: calc(100% - 400px - 40px);
+    .box_main_bottom .left > div + div {
+        margin-left: 20px;
     }
-    .box_main_bottom .left .box_main_search {
-        min-width: 400px;
+    .box_main_bottom .left > div h3 {
+        font-size: 20px;
+        height: 94px;
     }
-    .box_main_bottom .left .box_main_quick_link {
+    .box_main_bottom .left > div h3 span {
         width: 100%;
         margin-left: 0;
     }
+    .box_main_bottom .left .box_main_notice {
+        width: calc(100% - 270px - 116px);
+    }
+    .box_main_notice dd dl dt {
+        width: 60px;
+    }
+    .box_main_notice dd dl dd {
+        width: calc(100% - 60px);
+    }
+    .box_main_bottom .left .box_main_search {
+        min-width: auto;
+        max-width: 270px;
+    }
+    .box_main_bottom .left .box_main_quick_link {
+        width: 76px;
+    }
     .box_main_quick_link a {
-        height: auto;
         margin-bottom: 40px;
-        background-position: 96% -10px;
-        background-size: 126px 150px;
+        background-position: 80% 103px;
+        background-size: 110px 137px;
+        padding: 0;
+        padding-top: 27px;
     }
     .box_main_bottom .right {
-        width: 21.4%;
+        width: 340px;
     }
     .box_main_bottom .right .box_main_sns ul {
-        justify-content: space-around;
+        justify-content: space-between;
     }
     .box_main_bottom .right .box_main_sns ul li a {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
     }
     .box_main_bottom .right .box_main_teacher a {
-        background: url(../images/content/content_main_man.png) no-repeat 75% 92px;
+        background: url(../images/content/content_main_man.png) no-repeat 92% -1px;
+    }
+    .box_footer_top .box_family {
+        width: 278px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -973,23 +1134,18 @@ footer {
 
     /* 전체메뉴 */
     .box_allmenu {
-        display: flex;
-        justify-content: flex-end;
-        position: fixed;
         top: 0;
         right: -100%;
+    }
+    .box_allmenu nav {
         width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, .6);
     }
     .box_allmenu .box_allmenu_cont {
-        display: block;
         width: 90%;
-        height: 100vh;
-        background-color: #fff;
         padding: 0 20px;
-        box-sizing: border-box;
-        overflow-y: auto;
+    }
+    .box_allmenu_info .logo {
+        display: none;
     }
     .box_allmenu .box_allmenu_info {
         display: flex;
@@ -997,10 +1153,23 @@ footer {
         align-items: flex-end;
         height: 110px;
         border-bottom: 1px solid #eee;
+        padding: 0;
     }
     .box_allmenu .box_allmenu_info ul {
         display: flex;
-        padding: 15px 0 15px 25px;
+        padding-bottom: 12.8px;
+    }
+    .box_allmenu nav > ul {
+        margin: 0;
+    }
+    .box_allmenu nav > ul > li.on {
+        border-bottom: none;
+    }
+    .box_allmenu nav > ul > li:first-child {
+        border-top: none;
+    }
+    .box_allmenu nav > ul > li > ul {
+        margin: 0 -20px;
     }
     .box_allmenu .box_allmenu_info ul li + li {
         margin-left: 30px;
@@ -1011,48 +1180,9 @@ footer {
         background: url(../images/ico/ico_login_mo.png) no-repeat left center;
         background-size: 14px;
     }
-    .box_allmenu nav > ul {
-        margin: 0 -20px;
-    }
-    .box_allmenu nav > ul > li {
-        position: relative;
-    }
-    .box_allmenu nav > ul > li > a {
-        display: block;
-        padding: 25px 20px;
-        font-weight: 600;
-    }
-    .box_allmenu nav > ul > li > a::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 33px;
-        right: 20px;
-        width: 10px;
-        height: 6px;
-        background: url(../images/ico/ico_arrow_select.png) no-repeat center;
-        background-size: 100% 100%;
-        transition: .2s;
-    }
-    .box_allmenu nav > ul > li.on > a::after {
-        transform: rotate(180deg);
-    }
-    .box_allmenu nav > ul > li {
-        border-bottom: 1px solid #eee;
-    }
-    .box_allmenu nav > ul > li > ul {
-        display: none;
-    }
-    .box_allmenu nav > ul > li > ul > li > a {
-        display: block;
-        padding: 20px 40px;
-        margin: 0;
-        background-color: #eee;
-        box-sizing: border-box;
-        border-bottom: 1px solid #fff;
-    }
-    .box_allmenu nav > ul > li > ul > li:last-child > a {
-        border-bottom: none;
+    .box_allmenu .box_allmenu_cont .box_allmenu_btn a {
+        top: 15px;
+        right: 15px;
     }
 
     /* main */
@@ -1117,8 +1247,9 @@ footer {
         padding-bottom: 30px;
     }
     .box_main_top .box_main_quick ul li a {
+        width: auto;
         padding: 0;
-        justify-content: center;
+        justify-content: space-around;
     }
     .box_main_quick ul li:hover a::after {
         width: 0;
@@ -1201,7 +1332,7 @@ footer {
     .box_main_quick ul li a .right {
         position: absolute;
         top: 17px;
-        left: 65%;
+        left: 51%;
         width: auto;
         padding-top: 0;
     }
@@ -1221,6 +1352,7 @@ footer {
         padding: 0 20px;
         background-color: var(--sub-color);
         padding-bottom: 50px;
+        height: auto;
     }
     .box_main_bottom .left,
     .box_main_bottom .right {
@@ -1247,9 +1379,15 @@ footer {
     }
     .box_main_bottom .left .box_main_search {
         min-width: auto;
+        max-width: inherit;
         width: 100%;
     }
     .box_main_bottom .left .box_main_notice {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .box_main_bottom .left .box_main_quick_link {
         width: 100%;
         margin-left: 0;
     }
@@ -1296,8 +1434,9 @@ footer {
         justify-content: flex-start;
         padding: 20px 25px;
         background-position: 96% 4px;
-        background-size: 28%;
+        background-size: 105px;
         margin-bottom: 20px;
+        height: auto;
     }
     .box_main_quick_link a span strong {
         justify-content: flex-start;
@@ -1314,7 +1453,7 @@ footer {
         padding: 20px 25px;
         font-size: 14px;
         background-position: 96% 4px;
-        background-size: 28%;
+        background-size: 105px;
     }
     .box_main_bottom .right .box_main_sns {
         padding: 20px 0;
@@ -1510,16 +1649,21 @@ footer {
         margin: 30px 0;
     }
     .box_footer_top .box_family > ul {
-        max-width: 94px;
+        max-width: 115px;
     }
     .box_footer_top .box_family > ul > li > a {
-        padding: 0;
+        padding: 5px 10px;
         background-size: 15px 15px;
         font-size: 12px;
     }
-    .box_footer_top .box_family > ul > li > ul {
-        top: -158px;
-        left: -3px;
+    .box_footer_top .box_family > ul > li > a::after {
+        right: 13px;
+        background-size: 100%;
+        width: 15px;
+        height: 15px;
+    }
+    .box_footer_top .box_family > ul > li.on > ul {
+        margin-bottom: 30px;   
     }
     .box_footer_top .box_family > ul > li > ul li a {
         font-size: 12px;
@@ -1530,6 +1674,11 @@ footer {
     .box_footer_bottom .box_footer_info {
         font-size: 10px;
         font-weight: 200;
+    }
+    .box_footer_bottom .box_footer_info li:nth-child(2) span:last-child {
+        display: block;
+        width: 100%;
+        margin-left: 0;
     }
     .box_footer_bottom .box_footer_site {
         width: 100%;

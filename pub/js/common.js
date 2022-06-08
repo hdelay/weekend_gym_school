@@ -241,15 +241,35 @@ $('.box_footer_top .box_family > ul > li > a').on('click', function(e){
     $(this).parent().toggleClass('on');
 });
 
-// 모바일 메뉴
+// PC 전체메뉴
 $('.btn_allmenu a').on('click', function(e){
     e.preventDefault();
-    $('.box_allmenu').animate({
-        right: 0
-    });
+    if($(window).width() > 768) {
+        $('.box_allmenu').css({"right": '0'});
+        $("body").css("overflow", "hidden");
+    } else {
+        $('.box_allmenu').animate({
+            right: 0
+        });
+    }
 });
 
-// 모바일 메뉴
+// 전체메뉴 닫기
+$('.box_allmenu_btn a').on('click', function(e){
+    e.preventDefault();
+    if($(window).width() > 768) {
+        $('.box_allmenu').css({"right": "-100%"});
+        $("body").css("overflow", "inherit");
+    } else {
+        $('.box_allmenu').animate({
+            right: -100 + '%'
+        });
+    }
+});
+
+
+
+// 전체메뉴 슬라이드
 $('.box_allmenu nav > ul > li').on('click', function(){
     if($(this).hasClass('on')) {
         $(this).removeClass('on');
