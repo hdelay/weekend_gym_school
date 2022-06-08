@@ -1525,6 +1525,7 @@ footer {
     }
     .box_search_result .inner {
         width: 100%;
+        max-width: none;
         padding: 0 20px;
         box-sizing: border-box;
     }
@@ -1556,7 +1557,7 @@ footer {
         width: 100%;
         padding: 0 0 20px;
     }
-    .table_data_mo table tbody tr td:last-child .table_btn {
+    .table_btn {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

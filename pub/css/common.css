@@ -153,6 +153,7 @@ select::-ms-expand {
 /* 테이블 */
 .table_data table {
     width: 100%;
+    table-layout: fixed;
 }
 .table_data table caption {
     position: absolute;
@@ -169,11 +170,21 @@ select::-ms-expand {
     padding: 15px 10px;
     border-bottom: 1px solid #ddd;
     font-size: var(--font-s);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.table_data table tbody tr td.num {
+.table_data table .num {
     text-align: center;
     color: #999;
 }
+.table_data table .pc {
+}
+.table_data table .mo {
+    display: none;
+}
+
+
 @media screen and (max-width: 768px) {
     /* 라디오버튼 */
     .box_rdo_group {}
@@ -192,5 +203,41 @@ select::-ms-expand {
     .box_select select {
         padding: 15px 15px 15px 15px;
         font-size: var(--font-s);
+    }
+
+    /* 테이블 */
+    .table_data {
+        width: 100%;
+        border-top: 1px solid #000;
+    }
+    .table_data table {
+        table-layout: auto;
+    }
+    .table_data colgroup col {
+        width: 100%;
+    }
+    .table_data table thead {
+        display: none;
+    }
+    .table_data table .mo {
+        display: block;
+    }
+    .table_data table .pc,
+    .table_data table .num {
+        display: none;
+    }
+    .table_data table tbody tr {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .table_data table tbody tr td {
+        border: none;
+    }
+    .table_data table tbody tr td.mo {
+        width: 100%;
+        padding-top: 0;
+        border-bottom: 1px solid #eee;
     }
 }
