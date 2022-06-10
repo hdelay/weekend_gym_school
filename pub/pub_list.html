@@ -102,7 +102,16 @@
             depth3:'',
             path:'./html/pub_guide.html',
             date:'2022-00-00',
-            con:'작업예정',
+            con:'작업중',
+            etc:''
+        },
+        {
+            depth1:'gnb + header + footer',
+            depth2:'',
+            depth3:'',
+            path:'./html/layout.html',
+            date:'2022-06-10',
+            con:'완료',
             etc:''
         },
         {
@@ -110,13 +119,13 @@
             depth2:'',
             depth3:'',
             path:'./html/main.html',
-            date:'2022-00-00',
-            con:'작업예정',
+            date:'2022-06-10',
+            con:'완료',
             etc:''
         },
         {
             depth1:'1. 소개마당',
-            depth2:'사업개요',
+            depth2:'신나는 주말체육학교 소개',
             depth3:'',
             path:'./html/page_business.html',
             date:'2022-00-00',
@@ -125,6 +134,15 @@
         },
         {
             depth1:'2. 연락처정보',
+            depth2:'시도/시군구 정보',
+            depth3:'',
+            path:'./html/page_search_city.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
             depth2:'공공스포츠클럽 정보',
             depth3:'',
             path:'./html/page_search_sports_club.html',
@@ -134,18 +152,81 @@
         },
         {
             depth1:'',
-            depth2:'시도/시군구',
+            depth2:'전화번호검색',
             depth3:'',
-            path:'./html/page_search_city.html',
+            path:'./html/page_search_tell.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'3. 프로그램 운영현황',
+            depth2:'학교안 프로그램',
+            depth3:'',
+            path:'./html/page_program_01.html',
             date:'2022-00-00',
             con:'작업예정',
             etc:''
         },
         {
             depth1:'',
-            depth2:'전화번호검색',
+            depth2:'학교밖 프로그램',
             depth3:'',
-            path:'./html/page_search_tell.html',
+            path:'./html/page_program_02.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
+            depth2:'프로그램 신청확인',
+            depth3:'',
+            path:'./html/page_program_03.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
+            depth2:'학교밖 모집일정표',
+            depth3:'',
+            path:'./html/page_program_04.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'4. 현황자료',
+            depth2:'미정',
+            depth3:'',
+            path:'./html/.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'5. 알림마당',
+            depth2:'공지사항',
+            depth3:'',
+            path:'./html/page_notice.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
+            depth2:'FAQ',
+            depth3:'',
+            path:'./html/page_faq.html',
+            date:'2022-00-00',
+            con:'작업예정',
+            etc:''
+        },
+        {
+            depth1:'',
+            depth2:'홍보동영상',
+            depth3:'',
+            path:'./html/page_video.html',
             date:'2022-00-00',
             con:'작업예정',
             etc:''
@@ -179,12 +260,13 @@
         if(menuTableList[i].con === '완료'){
             curr_n++;
         }
-        //작업이 완료된 페이지를 제외하고 나머지 표시
-        $('.con').not('.con:contains(완료)').css('color','red');
-            
-        // 날짜가 오늘날짜와 같으면 화면에 표시
-        $('.date:contains('+ today +')').css('color','red');
     }
+    //작업이 완료된 페이지를 제외하고 나머지 표시
+    $('.con').not('.con:contains(완료)').css('color','red');
+        
+    // 날짜가 오늘날짜와 같으면 화면에 표시
+    $('.date:contains('+ today +')').css('color','red');
+    
     $('.curr_n').text(curr_n);
 
     $('#list').html(html);
