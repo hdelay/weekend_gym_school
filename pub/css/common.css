@@ -23,6 +23,18 @@
     --font-xxl: 2rem;
 }
 
+/* inner */
+.inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+    .inner {
+        max-width: 100%;
+    }
+}
+
 /* 정렬 */
 .agn_l {text-align: left !important;}
 .agn_c {text-align: center !important;}
