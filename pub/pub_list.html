@@ -19,10 +19,10 @@
     .header h1 {display: flex; align-items: center;}
     .header > div {background-color: #f3f3f3; padding: 0 30px; border-radius: 50px;}
     .header div p {text-align: right; margin: 0; line-height: 30px; font-size: 14px;}
-    .list_w table {width:100%;margin:20px auto;border-top: solid 2px #555;border-collapse:collapse;border-spacing:0;font-size:13px;text-align:center;}
+    .list_w table {width:100%;margin:20px auto;border-top: solid 2px #555;border-collapse:collapse;border-spacing:0;font-size:12px;text-align:left;}
     .list_w table tr:hover {background:#f3f3f3;}
-    .list_w table th {padding: 10px 0;	border: solid 1px #ddd;background: #efefef;vertical-align:middle;}
-    .list_w table td {padding: 8px 3px;border:solid 1px #ccc;vertical-align:middle;}
+    .list_w table th {padding: 7px 5px;	border: solid 1px #ddd;background: #efefef;vertical-align:middle;}
+    .list_w table td {padding: 7px 3px;border:solid 1px #ccc;vertical-align:middle;}
     .list_w table td:nth-child(2) {text-align: left;}
     .list_w table tr.on td {background: rgb(227, 235, 227);}
     .list_w table tr.title th {background:#666;color:#fff;font-size:18px;border:0;padding-top:7px;}
@@ -33,7 +33,17 @@
     .list_w table td.link,
     .list_w table td.etc{text-align: left; padding-left:10px;}
     #list th{background: #fff;}
+    .list_w thead tr th {text-align: center;}
     #list tr:hover th {background: #f3f3f3;}
+    #list tr th:nth-child(1),
+    #list tr th:nth-child(7),
+    #list tr th:nth-child(8) {text-align: center;}
+    .header > div.file {background-color: transparent; padding: 0; border-radius: 0;}
+    .file ul {display: flex; padding: 0; margin: 0;}
+    .file li {list-style: none;}
+    .file li + li {margin-left: 10px;}
+    .file li a {display: flex; padding: 8px 20px; background-color: #f5f5f5; border-radius: 50px; font-size: 12px;}
+    .file li:hover a {text-decoration: none; background-color: #666; color: #fff;}
 </style>
 <body>
     <div class="wrap">
@@ -44,26 +54,34 @@
                 <p>진행율 : <span class="per"></span></p>
             </div>
             <hr />
+            <div class="file">
+                <ul>
+                    <li><a href="./file/20220614pub.zip" title="다운로드 받기" download>20220614 ver.1</a></li>
+                </ul>
+            </div>
+            <hr />
         </div>
 
         <div class="list_w">
             <table class="codinglist">
                 <colgroup>
-                    <col width="4%" />
-                    <col width="13%" />
-                    <col width="13%" />
-                    <col width="13%" />
-                    <col width="20%" />
+                    <col width="3%" />
+                    <col width="10%" />
+                    <col width="9%" />
+                    <col width="12%" />
+                    <col width="18%" />
+                    <col width="18%" />
                     <col width="8%" />
                     <col width="5%" />
                     <col width="*" />
                 </colgroup>
                 <thead>
                     <tr class="title">
-                        <th colspan="8">신나는 주말체육학교(반응형)</th>
+                        <th colspan="9">신나는 주말체육학교(반응형)</th>
                     </tr>
                     <tr>
                         <th>no.</th>
+                        <th>구분</th>
                         <th>1depth</th>
                         <th>2depth</th>
                         <th>3depth</th>
@@ -81,11 +99,12 @@
     <script defer>
         
         $(function(){
-            let menuTableHeader = ['type','1Depth','2Depth','3Depth','경로','날짜','상태','비고']
+            let menuTableHeader = ['type', '구분','1Depth','2Depth','3Depth','경로','날짜','상태','비고']
     
             // 객체 초기화
             let menuDefault = {
                 type:'',
+                division: '',
                 depth1:'',
                 depth2:'',
                 depth3:'',
@@ -99,7 +118,8 @@
             let menuTableList = [
                 //value값이 없으면 빈문자열로 남기기
                 {
-                    depth1:'퍼블리싱 가이드',
+                    division: '퍼블리싱 가이드',
+                    depth1:'',
                     depth2:'',
                     depth3:'',
                     path:'./html/pub_guide.html',
@@ -108,7 +128,8 @@
                     etc:''
                 },
                 {
-                    depth1:'gnb + header + footer',
+                    division: 'gnb + header + footer',
+                    depth1:'',
                     depth2:'',
                     depth3:'',
                     path:'./html/layout.html',
@@ -117,7 +138,8 @@
                     etc:''
                 },
                 {
-                    depth1:'메인',
+                    division: '메인메뉴',
+                    depth1:'메인페이지',
                     depth2:'',
                     depth3:'',
                     path:'./html/main.html',
@@ -126,6 +148,7 @@
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'1. 소개마당',
                     depth2:'사업개요',
                     depth3:'',
@@ -135,6 +158,7 @@
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'2. 연락처정보',
                     depth2:'시도/시군구 정보',
                     depth3:'',
@@ -144,6 +168,7 @@
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'',
                     depth2:'공공스포츠클럽 정보',
                     depth3:'',
@@ -153,6 +178,7 @@
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'',
                     depth2:'전화번호검색',
                     depth3:'',
@@ -162,33 +188,107 @@
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'3. 프로그램 운영현황',
                     depth2:'학교안 프로그램',
-                    depth3:'',
-                    path:'./html/page_program_01.html',
+                    depth3:'학교안 프로그램 - 운영목록 화면',
+                    path:'./html/page_program_01_01.html',
                     date:'',
                     con:'',
                     etc:''
                 },
                 {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교안 프로그램 - 운영상세 화면',
+                    path:'./html/page_program_01_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'[POP]학교안 프로그램 - 수업출석정보팝업화면',
+                    path:'./html/page_program_01_pop.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
                     depth1:'',
                     depth2:'학교밖 프로그램',
-                    depth3:'',
-                    path:'./html/page_program_02.html',
+                    depth3:'학교밖 프로그램 - 운영목록 화면',
+                    path:'./html/page_program_02_01.html',
                     date:'',
                     con:'',
                     etc:''
                 },
                 {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교밖 프로그램 - 운영상세 화면',
+                    path:'./html/page_program_02_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'[pop]학교밖 프로그램 - 수업출석정보 팝업 화면',
+                    path:'./html/page_program_02_pop.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교안/밖프로그램 종목별 검색 화면',
+                    path:'./html/page_program_02_03.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
                     depth1:'',
                     depth2:'프로그램 신청확인',
-                    depth3:'',
-                    path:'./html/page_program_03.html',
+                    depth3:'학교밖 프로그램 모집 목록',
+                    path:'./html/page_program_03_01.html',
                     date:'',
                     con:'',
                     etc:''
                 },
                 {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교밖 프로그램 모집 상세',
+                    path:'./html/page_program_03_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교밖 프로그램 신청 확인',
+                    path:'./html/page_program_03_03.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
                     depth1:'',
                     depth2:'학교밖 모집일정표',
                     depth3:'',
@@ -198,41 +298,257 @@
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'4. 현황자료',
-                    depth2:'미정',
+                    depth2:'강사 현황',
                     depth3:'',
-                    path:'./html/.html',
+                    path:'./html/page_status_01.html',
                     date:'',
                     con:'',
                     etc:''
                 },
                 {
+                    division: '',
+                    depth1:'',
+                    depth2:'참여자 현황',
+                    depth3:'',
+                    path:'./html/page_status_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'종목별 현황',
+                    depth3:'',
+                    path:'./html/page_status_03.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'사용자 선택 현황',
+                    depth3:'',
+                    path:'./html/page_status_04.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    division: '',
                     depth1:'5. 알림마당',
                     depth2:'공지사항',
-                    depth3:'',
-                    path:'./html/page_notice.html',
+                    depth3:'공지사항',
+                    path:'./html/page_notice_01.html',
                     date:'',
                     con:'',
                     etc:''
                 },
                 {
+                    division: '',
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'공지사항 상세',
+                    path:'./html/page_notice_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
                     depth1:'',
                     depth2:'FAQ',
-                    depth3:'',
-                    path:'./html/page_faq.html',
+                    depth3:'FAQ',
+                    path:'./html/page_faq_01.html',
                     date:'',
                     con:'',
                     etc:''
                 },
                 {
+                    division: '',
                     depth1:'',
-                    depth2:'홍보동영상',
-                    depth3:'',
-                    path:'./html/page_video.html',
+                    depth2:'',
+                    depth3:'FAQ 상세',
+                    path:'./html/page_faq_02.html',
                     date:'',
                     con:'',
                     etc:''
-                }
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'홍보동영상',
+                    depth3:'홍보동영상',
+                    path:'./html/page_video_01.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'홍보동영상 상세',
+                    path:'./html/page_video_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'문의게시판',
+                    depth3:'문의게시판 (회원 로그인 시) ',
+                    path:'./html/page_inquiry_01.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'문의게시판 상세 (회원 로그인 시)',
+                    path:'./html/page_inquiry_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '멤버십',
+                    depth1:'회원가입 / 로그인',
+                    depth2:'학교밖 신청자 로그인 화면',
+                    depth3:'',
+                    path:'./html/page_membership_01.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'학교밖 신청자 회원가입 화면',
+                    depth3:'',
+                    path:'./html/page_membership_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'회원가입 개인정보활용동의 화면',
+                    depth3:'',
+                    path:'./html/page_membership_03.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '마이페이지',
+                    depth1:'마이페이지',
+                    depth2:'내정보 화면',
+                    depth3:'',
+                    path:'./html/page_myinfo_01.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'나의 프로그램 신청 현황 및 취소',
+                    depth3:'',
+                    path:'./html/page_myinfo_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'나의 문의사항 확인 및 상세',
+                    depth3:'',
+                    path:'./html/page_myinfo_03.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '시스템',
+                    depth1:'공통',
+                    depth2:'404에러',
+                    depth3:'',
+                    path:'./html/page_error_404.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'500에러',
+                    depth3:'',
+                    path:'./html/page_error_500.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'[pop]주소검색팝업',
+                    depth3:'',
+                    path:'./html/page_pop_01.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'[pop]레이어팝업(공지용)',
+                    depth3:'',
+                    path:'./html/page_pop_02.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'[pop]안내팝업(윈도우)',
+                    depth3:'',
+                    path:'./html/page_pop_03.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'[pop]에러/점검팝업(윈도우)',
+                    depth3:'',
+                    path:'./html/page_pop_04.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'[pop]바로가기 팝업(윈도우)',
+                    depth3:'',
+                    path:'./html/page_pop_05.html',
+                    date:'',
+                    con:'',
+                    etc:''
+                },
             ];
         
 
@@ -241,6 +557,7 @@
             for(let i=0; i < menuTableList.length; i++){
                 html += '<tr>'
                 html += '<th class="no">'+(i+1)+'</th>'
+                html += '<th>'+menuTableList[i].division+'</th>'
                 html += '<th>'+menuTableList[i].depth1+'</th>'
                 html += '<th>'+menuTableList[i].depth2+'</th>'
                 html += '<th>'+menuTableList[i].depth3+'</th>'
