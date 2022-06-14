@@ -267,8 +267,6 @@ $('.box_allmenu_btn a').on('click', function(e){
     }
 });
 
-
-
 // 전체메뉴 슬라이드
 $('.box_allmenu nav > ul > li').on('click', function(){
     if($(this).hasClass('on')) {
@@ -281,3 +279,20 @@ $('.box_allmenu nav > ul > li').on('click', function(){
         $(this).find('ul').slideDown();
     }
 });
+
+// 더보기 버튼
+$('.box_detail_content > .inner > .box_btn *').on('click', function(){
+    console.log('dd');
+    $(this).parent().parent().find('.table_data.type_02').addClass('on');
+    $(this).parent().parent().find('ul').addClass('on');
+});
+
+// 윈도우 팝업
+var winHeight = document.body.clientHeight; // 현재창의 높이
+var winWidth = document.body.clientWidth; // 현재창의 너비
+var winX = window.screenLeft; // 현재창의 x좌표
+var winY = window.screenTop; // 현재창의 y좌표
+var popX = winX + winWidth / 4;
+var popY = winY + winHeight / 4;
+
+    
