@@ -288,11 +288,24 @@ $('.box_detail_content > .inner > .box_btn *').on('click', function(){
 });
 
 // 윈도우 팝업
-var winHeight = document.body.clientHeight; // 현재창의 높이
-var winWidth = document.body.clientWidth; // 현재창의 너비
-var winX = window.screenLeft; // 현재창의 x좌표
-var winY = window.screenTop; // 현재창의 y좌표
-var popX = winX + winWidth / 4;
-var popY = winY + winHeight / 4;
-
+function popup(width, height){
+    var rtnVal;
+    var nWidth = width;
+    var nHeight = height;
+    var curWidth = document.body.clientWidth;
+    var curHeight = document.body.clientHeight;
+    
+    var nLeft = (document.body.clientWidth / 2) - (nWidth / 2);
+    var nTop = (window.screen.height / 2) - (nHeight / 2);
+    
+    var strOption = '';
+    strOption += 'left=' + nLeft + ',';
+    strOption += 'top=' + nTop + ',';
+    strOption += 'width=' + nWidth + ',';
+    strOption += 'height=' + nHeight + ',';
+    strOption += 'toolbar=no, status=no, menubar=no, resizable=yes, location=no scrollbars=yes';
+    
+    rtnVal = strOption;
+    return window.open("./page_program_01_pop.html","_blank", rtnVal);
+}
     
