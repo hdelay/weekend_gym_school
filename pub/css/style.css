@@ -1101,7 +1101,6 @@ header > nav > ul > li ul li:hover a::after {
     margin-top: calc(90px + 57px);
 }
 .box_detail_info {
-    height: 415px;
 }
 .box_detail_info .inner {
     display: flex;
@@ -1114,7 +1113,7 @@ header > nav > ul > li ul li:hover a::after {
     justify-content: center;
     align-items: center;
     width: 390px;
-    height: 100%;
+    height: 415px;
     border: 1px solid rgb(214 214 219);
     box-sizing: border-box;
 }
@@ -1524,6 +1523,24 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_search_result .box_info_list.type_02 ul li .right li a::after {
     display: none;
+}
+
+/* 학교 밖 프로그램 상세 */
+.box_detail_list ul li dl dd .instructor_info dl {
+    display: flex; 
+    flex-wrap: wrap;
+    padding: 0;
+}
+.box_detail_list ul li dl dd .instructor_info dl dt {
+    width: 53px;
+    color: rgb(153 153 153);
+}
+.box_detail_list ul li dl dd .instructor_info dl dd {
+    width: calc(100% - 53px);
+    margin: 0;
+}
+.box_detail_list ul li dl dd .instructor_info dl + dl {
+    margin-top: 10px;
 }
 
 /* 팝업 */

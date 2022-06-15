@@ -288,7 +288,7 @@ $('.box_detail_content > .inner > .box_btn *').on('click', function(){
 });
 
 // 윈도우 팝업
-function popup(width, height){
+function popup(width, height, url){
     var rtnVal;
     var nWidth = width;
     var nHeight = height;
@@ -306,6 +306,6 @@ function popup(width, height){
     strOption += 'toolbar=no, status=no, menubar=no, resizable=yes, location=no scrollbars=yes';
     
     rtnVal = strOption;
-    return window.open("./page_program_01_pop.html","_blank", rtnVal);
+    return window.open(url, "_blank", rtnVal);
 }
     
