@@ -44,6 +44,9 @@
     .file li + li {margin-left: 10px;}
     .file li a {display: flex; padding: 8px 20px; background-color: #f5f5f5; border-radius: 50px; font-size: 12px;}
     .file li:hover a {text-decoration: none; background-color: #666; color: #fff;}
+    .design div {display: flex; justify-content: space-between;}
+    .design div a {display: flex; justify-content: center; width: calc(50% - 13px); border-radius: 20px; padding: 3px 6px; background-color: #4848D4; color: #fff;}
+    .design div a.none {background-color: #aaa;}
 </style>
 <body>
     <div class="wrap">
@@ -73,11 +76,12 @@
                     <col width="18%" />
                     <col width="8%" />
                     <col width="5%" />
+                    <col width="8%" />
                     <col width="*" />
                 </colgroup>
                 <thead>
                     <tr class="title">
-                        <th colspan="9">신나는 주말체육학교(반응형)</th>
+                        <th colspan="10">신나는 주말체육학교(반응형)</th>
                     </tr>
                     <tr>
                         <th>no.</th>
@@ -88,6 +92,7 @@
                         <th>경로</th>
                         <th>날짜</th>
                         <th>상태</th>
+                        <th>디자인</th>
                         <th>비고</th>
                     </tr>
                 </thead>
@@ -99,7 +104,7 @@
     <script defer>
         
         $(function(){
-            let menuTableHeader = ['type', '구분','1Depth','2Depth','3Depth','경로','날짜','상태','비고']
+            let menuTableHeader = ['type', '구분','1Depth','2Depth','3Depth','경로','날짜','상태','디자인','비고']
     
             // 객체 초기화
             let menuDefault = {
@@ -111,6 +116,7 @@
                 path:'',
                 date:'',
                 con:'',
+                design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                 etc:''
             };
         
@@ -125,6 +131,7 @@
                     path:'./html/pub_guide.html',
                     date:'',
                     con:'작업중',
+                    design:'',
                     etc:''
                 },
                 {
@@ -135,6 +142,7 @@
                     path:'./html/layout.html',
                     date:'2022-06-10',
                     con:'완료',
+                    design:'',
                     etc:''
                 },
                 {
@@ -145,6 +153,7 @@
                     path:'./html/main.html',
                     date:'2022-06-10',
                     con:'완료',
+                    design:'<a href="https://zpl.io/jZrPReW" target="_blank">WEB</a><a href="https://zpl.io/RMDEEdp" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -155,6 +164,7 @@
                     path:'./html/page_business.html',
                     date:'2022-06-12',
                     con:'완료',
+                    design:'<a href="https://zpl.io/mDY7AoA" target="_blank">WEB</a><a href="https://zpl.io/W4vmze7" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -165,6 +175,7 @@
                     path:'./html/page_search_city.html',
                     date:'2022-06-12',
                     con:'완료',
+                    design:'<a href="https://zpl.io/GE6yBLr" target="_blank">WEB</a><a href="https://zpl.io/9q6OvLd" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -175,6 +186,7 @@
                     path:'./html/page_search_sports_club.html',
                     date:'2022-06-12',
                     con:'완료',
+                    design:'<a href="https://zpl.io/jZrQmDA" target="_blank">WEB</a><a href="https://zpl.io/dxLpEgK" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -185,6 +197,7 @@
                     path:'./html/page_search_tell.html',
                     date:'2022-06-10',
                     con:'완료',
+                    design:'<a href="https://zpl.io/6N6xdLP" target="_blank">WEB</a><a href="https://zpl.io/5E6OdLQ" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -195,6 +208,7 @@
                     path:'./html/page_program_01_01.html',
                     date:'2022-06-14',
                     con:'완료',
+                    design:'<a href="https://zpl.io/Am6B8Lo" target="_blank">WEB</a><a href="https://zpl.io/8l6wxLx" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -205,6 +219,7 @@
                     path:'./html/page_program_01_02.html',
                     date:'2022-06-14',
                     con:'완료',
+                    design:'<a href="https://zpl.io/vM57rwQ" target="_blank">WEB</a><a href="https://zpl.io/7w6Oo1q" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -215,6 +230,7 @@
                     path:'./html/page_program_01_pop.html',
                     date:'2022-06-15',
                     con:'완료',
+                    design:'<a href="https://zpl.io/p1z4LEj" target="_blank">WEB</a><a href="https://zpl.io/MdQPZrd" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -225,7 +241,8 @@
                     path:'./html/page_program_02_01.html',
                     date:'2022-06-15',
                     con:'완료',
-                    etc:''
+                    design:'<a href="" target="_blank">WEB</a><a href="" target="_blank" class="none">MO</a>',
+                    etc:'모바일디자인X'
                 },
                 {
                     division: '',
@@ -235,6 +252,7 @@
                     path:'./html/page_program_02_02.html',
                     date:'2022-06-15',
                     con:'완료',
+                    design:'<a href="https://zpl.io/9q6Ovgl" target="_blank">WEB</a><a href="https://zpl.io/no0pMPk" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -245,6 +263,7 @@
                     path:'./html/page_program_02_pop.html',
                     date:'2022-06-15',
                     con:'완료',
+                    design:'<a href="https://zpl.io/vM57rLY" target="_blank">WEB</a><a href="https://zpl.io/8l6wxAJ" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -255,16 +274,18 @@
                     path:'./html/page_program_02_03.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/dxLpEDR" target="_blank">WEB</a><a href="https://zpl.io/Pq5P0Ox" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
-                    depth2:'프로그램 신청확인',
+                    depth2:'학교밖 프로그램 신청',
                     depth3:'학교밖 프로그램 모집 목록',
                     path:'./html/page_program_03_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/7w6vevj" target="_blank">WEB</a><a href="https://zpl.io/W4vmXnp" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -275,16 +296,18 @@
                     path:'./html/page_program_03_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/YYN1XvM" target="_blank">WEB</a><a href="https://zpl.io/no07eDQ" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
                     depth2:'',
-                    depth3:'학교밖 프로그램 신청 확인',
-                    path:'./html/page_program_03_03.html',
+                    depth3:'[POP]학교밖 프로그램 모집 - 수업출석정보팝업화면',
+                    path:'./html/page_program_03_pop.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/RMD9X5v" target="_blank">WEB</a><a href="https://zpl.io/6N6xBrR" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -295,37 +318,74 @@
                     path:'./html/page_program_04.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/g8XOWjQ" target="_blank">WEB</a><a href="https://zpl.io/r1g0P4e" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'4. 현황자료',
                     depth2:'강사 현황',
-                    depth3:'',
-                    path:'./html/page_status_01.html',
+                    depth3:'성별 현황',
+                    path:'./html/page_status_01_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/6N6xBqy" target="_blank">WEB</a><a href="https://zpl.io/ewBOWlz" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
-                    depth2:'참여자 현황',
-                    depth3:'',
-                    path:'./html/page_status_02.html',
+                    depth2:'',
+                    depth3:'평균연령 현황',
+                    path:'./html/page_status_01_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/L4gG1yY" target="_blank">WEB</a><a href="#" class="none">MO</a>',
+                    etc:'모바일디자인X'
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'참여자 현황',
+                    depth3:'학교 안',
+                    path:'./html/page_status_02_01.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/xmDQrNW" target="_blank">WEB</a><a href="https://zpl.io/ewBOW6W" target="_blank">MO</a>',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교 밖',
+                    path:'./html/page_status_02_02.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/Em6x1XY" target="_blank">WEB</a><a href="https://zpl.io/z89jLPE" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
                     depth2:'종목별 현황',
-                    depth3:'',
-                    path:'./html/page_status_03.html',
+                    depth3:'학교 안',
+                    path:'./html/page_status_03_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/5E6oxQQ" target="_blank">WEB</a><a href="https://zpl.io/8l6RJ5x" target="_blank">MO</a>',
                     etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'학교 밖',
+                    path:'./html/page_status_03_02.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/Em6x1nY" target="_blank">WEB</a><a href="#" class="none">MO</a>',
+                    etc:'모바일디자인X'
                 },
                 {
                     division: '',
@@ -335,6 +395,7 @@
                     path:'./html/page_status_04.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -346,7 +407,8 @@
                     path:'./html/page_notice_01.html',
                     date:'',
                     con:'',
-                    etc:''
+                    design:'<a href="https://zpl.io/3X6d94d" target="_blank">WEB</a><a href="" target="_blank" class="none">MO</a>',
+                    etc:'모바일디자인X'
                 },
                 {
                     division: '',
@@ -357,16 +419,18 @@
                     path:'./html/page_notice_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/kDZ7W4v" target="_blank">WEB</a><a href="https://zpl.io/dxLY1dE" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
                     depth2:'FAQ',
-                    depth3:'FAQ',
+                    depth3:'FAQ(자주묻는질문)',
                     path:'./html/page_faq_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/9q6zn7B" target="_blank">WEB</a><a href="https://zpl.io/O0jp1v1" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -377,6 +441,29 @@
                     path:'./html/page_faq_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/4069oNJ" target="_blank">WEB</a><a href="https://zpl.io/XYEmX78" target="_blank">MO</a>',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'공모전',
+                    depth3:'공모전',
+                    path:'./html/page_competition_01.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/0965poK" target="_blank">WEB</a><a href="https://zpl.io/jZr7W3r" target="_blank">MO</a>',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'공모전 상세',
+                    path:'./html/page_competition_02.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/RMD9X4K" target="_blank">WEB</a><a href="https://zpl.io/o1R6PJo" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -387,6 +474,7 @@
                     path:'./html/page_video_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/KGAQ67q" target="_blank">WEB</a><a href="https://zpl.io/XYEmXj8" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -397,6 +485,7 @@
                     path:'./html/page_video_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/B16dZvp" target="_blank">WEB</a><a href="https://zpl.io/Z04mXwE" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -407,16 +496,18 @@
                     path:'./html/page_inquiry_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/0965prK" target="_blank">WEB</a><a href="https://zpl.io/0965q7O" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
                     depth2:'',
-                    depth3:'문의게시판 상세 (회원 로그인 시)',
+                    depth3:'문의게시판 글쓰기 (회원 로그인 시)',
                     path:'./html/page_inquiry_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/1y6pD3E" target="_blank">WEB</a><a href="https://zpl.io/jZr7WNr" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -427,6 +518,7 @@
                     path:'./html/page_membership_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/RMD9XRK" target="_blank">WEB</a><a href="https://zpl.io/GE6R1P4" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -437,6 +529,7 @@
                     path:'./html/page_membership_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/dxLY1KE" target="_blank">WEB</a><a href="https://zpl.io/Dl6o1mq" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -447,6 +540,7 @@
                     path:'./html/page_membership_03.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -457,6 +551,29 @@
                     path:'./html/page_myinfo_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'회원정보수정-비밀번호 재확인',
+                    path:'./html/page_myinfo_01_01.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/xmDQr9w" target="_blank">WEB</a><a href="https://zpl.io/r1g0PGO" target="_blank">MO</a>',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'',
+                    depth3:'회원정보수정',
+                    path:'./html/page_myinfo_01_02.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/Em6x18x" target="_blank">WEB</a><a href="https://zpl.io/Z04mX3d" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -467,16 +584,29 @@
                     path:'./html/page_myinfo_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/1y6pDAm" target="_blank">WEB</a><a href="https://zpl.io/Am6Dn3O" target="_blank">MO</a>',
                     etc:''
                 },
                 {
                     division: '',
                     depth1:'',
-                    depth2:'나의 문의사항 확인 및 상세',
+                    depth2:'나의 문의사항 확인',
                     depth3:'',
-                    path:'./html/page_myinfo_03.html',
+                    path:'./html/page_myinfo_03_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="https://zpl.io/5E6oxlr" target="_blank">WEB</a><a href="https://zpl.io/Am6Dn3n" target="_blank">MO</a>',
+                    etc:''
+                },
+                {
+                    division: '',
+                    depth1:'',
+                    depth2:'나의 문의사항 상세',
+                    depth3:'',
+                    path:'./html/page_myinfo_03_02.html',
+                    date:'',
+                    con:'',
+                    design:'<a href="https://zpl.io/Dl6o13q" target="_blank">WEB</a><a href="https://zpl.io/Am6Dlm6" target="_blank">MO</a>',
                     etc:''
                 },
                 {
@@ -487,6 +617,7 @@
                     path:'./html/page_error_404.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -497,6 +628,7 @@
                     path:'./html/page_error_500.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -507,6 +639,7 @@
                     path:'./html/page_pop_01.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -517,6 +650,7 @@
                     path:'./html/page_pop_02.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -527,6 +661,7 @@
                     path:'./html/page_pop_03.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -537,6 +672,7 @@
                     path:'./html/page_pop_04.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
                 {
@@ -547,6 +683,7 @@
                     path:'./html/page_pop_05.html',
                     date:'',
                     con:'',
+                    design:'<a href="" target="_blank" class="none">WEB</a><a href="" target="_blank" class="none">MO</a>',
                     etc:''
                 },
             ];
@@ -564,6 +701,7 @@
                 html += '<th class="link"><a href='+menuTableList[i].path+' target="_blank">'+menuTableList[i].path+'</a></th>'
                 html += '<th class="date">'+menuTableList[i].date+'</th>'
                 html += '<th class="con">'+menuTableList[i].con+'</th>'
+                html += '<th class="design"><div>'+menuTableList[i].design+'</div></th>'
                 html += '<th class="etc">'+menuTableList[i].etc+'</th>'
                 html += '</tr>'
             };
@@ -602,6 +740,7 @@
 
             // 진행률 나타내기
             $('.per').text(Math.floor((curr_n/total_n)*100) + '%');
+
         });
     </script>
 </body>
