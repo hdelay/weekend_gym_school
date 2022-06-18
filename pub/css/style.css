@@ -35,11 +35,38 @@ body, .wrap {
 }
 .box_tit h3 span {
     display: block;
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 18px;
     font-weight: 400;
 }
 .box_tit h3 span em {
+    color: var(--sub-btn-color);
+}
+.box_tit h4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.box_tit h4 strong {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000 !important;
+}
+.box_tit h4 strong + span {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(153 153 153);
+}
+.box_tit h4 strong + .box_btn * {
+    padding-left: 50px;
+    padding-right: 18px;
+    box-sizing: border-box;
+    background: url(../images/ico/ico_down.png) no-repeat 20px center;
+    background-color: #fff;
+    background-size: 25px;
+    border: 2px solid var(--sub-btn-color);
+    height: 50px;
     color: var(--sub-btn-color);
 }
 
@@ -819,7 +846,7 @@ header > nav > ul > li ul li:hover a::after {
     padding-top: 155px;
 }
 
-/* search form 연락처정보 */
+/* search form */
 .box_search_form {
     background-color: var(--sub-bg-color);
     padding: 30px 0;
@@ -831,6 +858,24 @@ header > nav > ul > li ul li:hover a::after {
     align-items: center;
     justify-content: space-between;
 }
+.box_search_form .inner > dl + dl {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgb(214 214 219);
+}
+.box_search_form .inner > dl.solo {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(214 214 219);
+}
+.box_search_form .inner > dl.solo + .box_btn {
+    margin-top: 0;
+}
+.box_search_form.type_04 .inner > dl + .box_btn {
+    margin-top: 30px;
+}
+
+/* 연락처정보 */
 .box_search_form.type_01 .right {
     display: flex;
     flex-wrap: wrap;
@@ -860,12 +905,6 @@ header > nav > ul > li ul li:hover a::after {
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
-}
-.box_search_form.type_03 .inner > dl + dl {
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid rgb(214 214 219);
-
 }
 .box_search_form.type_03 dl dt {
     width: 100px;
@@ -1047,6 +1086,12 @@ header > nav > ul > li ul li:hover a::after {
 }
 .result_none.type_03::after {
     background-image: url(../images/content/content_not_found_03.png);
+}
+.result_none.type_04::after {
+    background-image: url(../images/content/content_not_found_04.png);
+}
+.result_none.type_05::after {
+    background-image: url(../images/content/content_not_found_05.png);
 }
 
 /* 사업소개 */
@@ -1367,11 +1412,6 @@ header > nav > ul > li ul li:hover a::after {
     align-items: center;
     width: 100%;
 }
-.box_search_form.type_04 .inner > dl + dl {
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid rgb(214 214 219);
-}
 .box_search_form.type_04 dl dt {
     width: 100px;
 }
@@ -1414,18 +1454,6 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_search_form.type_04 dl dd .box_rdo input[type="radio"]:checked + label span span {
     background-color: var(--sub-btn-color);
-}
-.box_search_form.type_04 dl:nth-child(2) dd {
-    display: flex;
-}
-.box_search_form.type_04 dl:nth-child(2) dd .box_select {
-    width: 283px;
-}
-.box_search_form.type_04 dl:nth-child(2) dd .box_select + .box_select {
-    margin-left: 20px;
-}
-.box_search_form.type_04 dl:nth-child(2) dd .box_select:nth-child(3) {
-    width: calc(100% - 303px - 303px);
 }
 .box_search_form.type_04 .inner > .box_btn {
     margin-top: 60px;
@@ -1542,6 +1570,64 @@ header > nav > ul > li ul li:hover a::after {
 .box_detail_list ul li dl dd .instructor_info dl + dl {
     margin-top: 10px;
 }
+
+/* 종목별 현황 */
+.box_pagetab {
+    padding-top: 80px;
+}
+.box_pagetab .inner,
+.box_tab_item .inner {
+    margin-bottom: 0;
+}
+.box_tab_item .table_data thead {
+    display: none;
+}
+.box_tab_item .table_data table tbody tr td {
+    padding: 30px 10px;
+    color: rgb(153 153 153);
+}
+.box_tab_item .table_data table tbody tr td strong {
+    font-weight: 600;
+    color: #000;
+}
+
+/* 현황자료 > 종목별 현황 */
+.box_search_form.type_05 > .inner {
+    justify-content: flex-end;
+}
+.box_search_form.type_05 .inner > dl {
+    display: flex;
+    align-items: center;
+}
+.box_search_form.type_05 .inner > dl + dl {
+    padding: 0;
+    margin: 0;
+    border-top: 0;
+}
+.box_search_form.type_05 > .inner dl dt {
+    padding: 0 30px;
+}
+.box_search_form.type_05 .inner > dl dd {
+    width: 283px;
+}
+.box_search_form.type_05 > .inner dl + .box_btn {
+    width: 180px;
+    margin-left: 10px;
+}
+.box_result_tit {
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgb(214 214 219);
+    text-align: center;
+    font-size: 32px;
+    color: #999;
+}
+.box_result_tit strong {
+    font-weight: 600;
+    color: var(--sub-btn-color);
+}
+
 
 /* 팝업 */
 .pop, .wrap {
@@ -1889,6 +1975,19 @@ footer {
         left: 0;
     }
 
+    /* 타이틀 */
+    .box_tit h4 strong {
+        font-size: 24px;
+    }
+    .box_tit h4 strong + .box_btn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .box_tit h4 strong + .box_btn * {
+        width: 162px;
+        min-width: 0;
+    }
 
     /* header */
     header {
@@ -2482,15 +2581,25 @@ footer {
         padding-top: 40px;
     }
 
+    /* search_form */
+    .box_search_form .inner > dl + dl {
+        padding-top: 0;
+        border-top: none;
+    }
+    .box_search_form .inner > dl.solo {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .box_search_form .inner > dl.solo + .box_btn {
+        margin-top: 20px;
+    }
+
     /* 학교 안 프로그램 */
     .box_search_result .box_info_list ul {
         width: 100%;
         padding: 0 20px;
         box-sizing: border-box;
-    }
-    .box_search_form.type_03 .inner > dl + dl {
-        padding-top: 0;
-        border-top: none;
     }
     .box_search_form.type_03 .inner > dl dt {
         margin-bottom: 10px;
@@ -2714,10 +2823,6 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
-    .box_search_form.type_04 .inner > dl + dl {
-        padding-top: 0;
-        border-top: none;
-    }
     .box_search_form.type_04 dl dt {
         margin-bottom: 10px;
     }
@@ -2769,8 +2874,51 @@ footer {
         flex-wrap: nowrap;
         padding: 0;
     }
-    .box_search_result .box_info_list.type_02 ul li .right li a {
-        
+    
+    /* 종목별 현황 */
+    .box_pagetab {
+        padding-top: 60px;
+    }
+    .box_tab_item .table_data {
+        border-top: none;
+    }
+    .box_tab_item .table_data table tbody tr {
+        padding: 25px 0;
+    }
+    .box_tab_item .table_data table tbody tr {
+        border-bottom: 1px solid rgb(232 232 232);
+    }
+    .box_tab_item .table_data table tbody tr td {
+        padding: 5px 10px;
+    }
+    .box_tab_item .table_data table tbody tr td:nth-child(1) {
+        width: 100%;
+        text-align: left !important;
+    }
+
+    /* 현황자료 > 종목별 현황 */
+    .box_search_form.type_05 .inner > dl {
+        width: 100%;
+    }
+    .box_search_form.type_05 > .inner dl dt {
+        display: none;
+    }
+    .box_search_form.type_05 .inner > dl dd {
+        width: 100%;
+    }
+    .box_search_form.type_05 .inner > dl + dl {
+        margin-top: 10px;
+    }
+    .box_search_form.type_05 > .inner dl + .box_btn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .box_result_tit {
+        margin: 20px -20px -30px;
+        background-color: #fff;
+        padding: 30px 20px 0;
+        font-size: 22px;
     }
 
     /* 팝업 */

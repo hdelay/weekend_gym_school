@@ -83,6 +83,29 @@
     background: transparent;
     pointer-events: none;
 }
+.box_btn.type_more {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: calc(100% - 13px);
+    border-top: 1.5px solid #000;
+    background-color: #fff;
+}
+.box_btn.type_more * {
+    border: 2px solid #999;
+    box-sizing: border-box;
+    background: url(../images/ico/ico_arrow_gray.png) no-repeat 80% center;
+    background-color: #fff;
+    width: 196px;
+    min-width: 196px;
+    height: 50px;
+    text-indent: -20px;
+    color: #999;
+}
+.box_btn.type_more:hover * {
+    background-color: #fff;
+}
 
 /* 라디오박스 */
 .box_rdo_group {
@@ -223,6 +246,20 @@ select::-ms-expand {
 .box_select select:focus + span {
     transform: rotate(180deg);
 }
+/* 시도선택/시군구선택/종목검색 */
+.box_select_group.type_01 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box_select_group.type_01 .box_select {
+    width: 283px;
+}
+.box_select_group.type_01 .box_select + .box_select {
+    margin-left: 20px;
+}
+.box_select_group.type_01 .box_select:nth-child(3) {
+    width: calc(100% - 303px - 303px);
+}
 
 /* 테이블 */
 .table_data table {
@@ -291,8 +328,58 @@ select::-ms-expand {
     border-top: 1px dashed rgb(204 204 204);
 }
 
+/* 탭 */
+.box_pagetab {
+    width: 100%;
+    border-bottom: 2px solid var(--sub-btn-color);
+}
+.box_pagetab ul {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 1200px;
+    margin: 0 auto;
+}
+.box_pagetab ul li {
+    flex: 1;
+}
+.box_pagetab ul li + li {
+    margin-left: 2px;
+}
+.box_pagetab ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgb(243 243 245);
+    border-radius: 5px 5px 0 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    font-size: 18px;
+    color: rgb(153 153 153); 
+}
+.box_pagetab ul li.on a {
+    background-color: var(--sub-btn-color);
+    color: #fff;
+}
+.box_pagetab ul li a span {
+    display: block;
+    padding: 2px 5px;
+    background-color: #fff;
+    border-radius: 30px;
+    font-size: 12px;
+    color: var(--sub-btn-color);
+}
+.box_pagetab + .box_search_form {
+    margin-top: 0;
+}
 
 @media screen and (max-width: 768px) {
+    /* 버튼 */
+    .box_btn.type_more {
+        width: 100%;
+    }
+
     /* 라디오버튼 */
     .box_rdo_group {}
     .box_rdo_group .box_rdo + .box_rdo {
@@ -310,6 +397,21 @@ select::-ms-expand {
     .box_select select {
         padding: 15px 15px 15px 15px;
         font-size: var(--font-s);
+    }
+    /* 시도선택/시군구선택/종목검색 */
+    .box_select_group.type_01 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .box_select_group.type_01 .box_select {
+        width: 100%;
+    }
+    .box_select_group.type_01 .box_select + .box_select {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .box_select_group.type_01 .box_select:nth-child(3) {
+        width: 100%;
     }
 
     /* 테이블 */
@@ -408,5 +510,17 @@ select::-ms-expand {
     .table_row table tbody tr:first-child th:nth-child(3),
     .table_row table tbody tr:first-child td:nth-child(4) {
         border-top: 1px dashed rgb(204 204 204);
+    }
+
+    /* 탭 */
+    .box_pagetab ul {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+    .inner > .box_pagetab ul {
+        width: 100%;
+    }
+    .box_pagetab ul li a {
+        padding: 15px;
     }
 }

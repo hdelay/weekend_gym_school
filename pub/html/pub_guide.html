@@ -76,6 +76,57 @@
             align-items: center;
             margin-bottom: 5px;
         }
+
+        /*  */
+        @media screen and (max-width: 768px) {
+            .wrap_guide {
+                padding: 20px;
+            }
+            .btn_guide {
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                flex-wrap: wrap;
+                width: 100%;
+                overflow-x: auto;
+                padding: 50px 20px 20px 20px;
+                background-color: #fff;
+                box-sizing: border-box;
+            }
+            .btn_guide h1 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 15px 0;
+            }
+            .btn_guide h1 a {
+                text-align: center;
+            }
+            .btn_guide ul {
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+            .btn_guide ul li {
+                white-space: nowrap;
+            }
+            .btn_guide ul li + li {
+                margin-left: 20px;
+                margin-top: 0;
+            }
+            .box_guide {
+                padding: 0;
+                padding-top: 80px;
+            }
+            .box_guide .box_group {
+                padding: 10px;
+            }
+            .box_guide .box_group > .box_item > h2 {
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 
 </head>
@@ -95,6 +146,7 @@
             <li><a href="#cont_08">테이블</a></li>
             <li><a href="#cont_09">리스트</a></li>
             <li><a href="#cont_10">팝업</a></li>
+            <li><a href="#cont_11">탭</a></li>
         </ul>
     </div>
 
@@ -150,14 +202,31 @@
             <div class="box_item">
                 <h2 id="cont_04">타이틀</h2>
                 <div class="box_item_cont">
+
                     <div class="box_tit">
                         <h2><strong>전화번호검색</strong></h2>
                     </div>
+
                     <div class="box_tit">
                         <h3>
                             <strong>전화번호 검색</strong>
                             <span>각 시·군·구에서 프로그램을 운영하고 있으므로 문의하고자 하는 지역을 확인하여 전화 문의 바랍니다.</span>
                         </h3>
+                    </div>
+
+                    <div class="box_tit">
+                        <h4>
+                            <strong>프로그램 목록</strong>
+                            <span>단위: 세</span>
+                        </h4>
+                    </div>
+                    <div class="box_tit">
+                        <h4>
+                            <strong>프로그램 목록</strong>
+                            <div class="box_btn">
+                                <a href="" class="excel" data-animation="ripple">Excel 다운로드</a>
+                            </div>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -363,6 +432,29 @@
                 <h2 id="cont_10">팝업</h2>
                 <div class="box_item_cont">
                     
+                </div>
+            </div>
+        </div>
+        <!-- 탭 -->
+        <div class="box_group">
+            <div class="box_item">
+                <h2 id="cont_11">탭</h2>
+                <div class="box_item_cont">
+                    
+                    <div class="box_pagetab">
+                        <ul>
+                            <li class="on"><a href="">학교안 프로그램</a></li>
+                            <li><a href="">학교밖 프로그램</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="box_pagetab" style="margin-top: 20px;">
+                        <ul>
+                            <li class="on"><a href="">학교안 프로그램<span>1580</span></a></li>
+                            <li><a href="">학교밖 프로그램<span>1580</span></a></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
