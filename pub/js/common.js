@@ -308,4 +308,14 @@ function popup(width, height, url){
     rtnVal = strOption;
     return window.open(url, "_blank", rtnVal);
 }
+
+// 로그인정보 변경
+$('.change button').on('click', function(){
+    $(this).parents('.table_info').addClass('on');
+    $(this).parent().hide();
+});
+$('.box_change .box_btn .btn_white').on('click', function(){
+    $('.table_info').removeClass('on');
+    $('.change').show();
+});
     
