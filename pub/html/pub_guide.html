@@ -220,6 +220,7 @@
                             <span>단위: 세</span>
                         </h4>
                     </div>
+
                     <div class="box_tit">
                         <h4>
                             <strong>프로그램 목록</strong>
@@ -228,6 +229,19 @@
                             </div>
                         </h4>
                     </div>
+                    
+                    <div class="box_tit">
+                        <h5>
+                            <strong>전화번호 검색</strong>
+                        </h5>
+                    </div>
+
+                    <div class="box_tit">
+                        <h6>
+                            <strong>전화번호 검색</strong>
+                        </h6>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -385,73 +399,117 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th scope="row">이메일</th>
+                                    <th scope="row"><label for="input_08">이름</label></th>
                                     <td>
                                         <div class="box_input_group">
-                                            <div class="box_input">
-                                                <input type="text" value="yatho@yatho.co.kr">
+                                            <div class="box_input min">
+                                                <input type="text" value="김삿갓" id="input_08">
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">주소</th>
+                                    <th scope="row"><label for="select_01">생년월일</label></th>
                                     <td>
-                                        <div class="box_input_group email">
-                                            <div class="box_input">
-                                                <input type="text" value="13254">
+                                        <div class="box_input_group birth">
+                                            <div class="box_sel min">
+                                                <select id="select_01">
+                                                    <option value="">1920</option>
+                                                </select>
+                                                <span></span>
                                             </div>
-                                            <div class="box_input">
-                                                <input type="text" value="강남대로12">
+                                            <div class="box_sel">
+                                                <select id="select_02">
+                                                    <option value="">01</option>
+                                                </select>
+                                                <span></span>
                                             </div>
-                                            <div class="box_btn">
-                                                <button data-animation="ripple">우편번호 찾기</button>
-                                            </div>
-                                            <div class="box_input">
-                                                <input type="text" value="12층">
+                                            <div class="box_sel">
+                                                <select id="select_03">
+                                                    <option value="">04</option>
+                                                </select>
+                                                <span></span>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">메일 수신 여부</th>
+                                    <th scope="row"><label for="radio_06">성별</label></th>
                                     <td>
-                                        <div class="box_rdo">
-
+                                        <div class="box_radio_group">
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_06" name="radio_group_04" checked disabled>
+                                                <label for="radio_06">남자</label>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">이름</th>
-                                    <td></td>
+                                    <th scope="row"><label for="input_10">연락처(자녀)</label></th>
+                                    <td>
+                                        <div class="box_input_group tell">
+                                            <div class="box_input">
+                                                <input type="text" value="010" id="input_10">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" value="1234" id="input_11">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" value="1234" id="input_12">
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">생년월일</th>
-                                    <td></td>
+                                    <th scope="row"><label for="input_10">학생구분</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_radio_group column">
+                                                <div class="box_radio">
+                                                    <input type="radio" id="radio_06" name="radio_group_05" checked disabled>
+                                                    <label for="radio_06">학생</label>
+                                                </div>
+                                                <div class="box_radio">
+                                                    <input type="radio" id="radio_06" name="radio_group_05" checked disabled>
+                                                    <label for="radio_06">동 연령대 청소년</label>
+                                                </div>
+                                            </div>
+                                            <div class="box_sel min">
+                                                <select id="">
+                                                    <option value="">일반청소년</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">성별</th>
-                                    <td></td>
+                                    <th scope="row"><label for="input_13">학교명</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" value="가나중" id="input_13">
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">연락처(자녀)</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">학생구분</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">학교명</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">학년/반</th>
-                                    <td></td>
+                                    <th scope="row"><label for="input_14">학년/반</label></th>
+                                    <td>
+                                        <div class="box_input_group half">
+                                            <div class="box_input min">
+                                                <input type="text" value="3" id="input_14">
+                                            </div>
+                                            <div class="box_input min">
+                                                <input type="text" value="3" id="input_15">
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>

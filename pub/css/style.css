@@ -1646,6 +1646,13 @@ header > nav > ul > li ul li:hover a::after {
     background-size: auto 100%;
 }
 
+/* 상세 */
+.box_detail {
+    width: 1200px;
+    margin: 90px auto 100px;
+    padding-top: 60px;
+}
+
 /* 회원정보수정 */
 .box_content {
     width: 1200px;
@@ -3108,6 +3115,13 @@ footer {
     }
     .box_change ul {
         width: 100%;
+    }
+
+    /* 상세 */
+    .box_detail {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
     }
 
     /* form grid */

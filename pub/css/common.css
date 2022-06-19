@@ -498,6 +498,47 @@ select::-ms-expand {
     margin: 0 -20px;
 }
 
+.table_info_detail {
+}
+.table_info_detail table {
+    width: 100%;
+}
+.table_info_detail table thead tr:nth-child(1) th {
+    padding: 20px 0;
+    border-bottom: 1px solid #b2b2b2;
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+}
+.table_info_detail table thead tr:nth-child(2) th {
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(238 238 238);
+    color: rgb(153 153 153);
+}
+.table_info_detail table thead tr th .info {
+    display: flex;
+    justify-content: space-between;
+}
+.table_info_detail table tbody td img {
+    max-width: 100%;
+}
+.table_info_detail table tbody tr:nth-child(1) td {
+    padding: 30px 0;
+}
+.table_info_detail table tbody tr:nth-child(2) td {
+    padding: 20px 0;
+    border-top: 1px solid rgb(238 238 238);
+}
+.table_info_detail table tbody tr td .attachments a {
+    display: inline-block;
+    padding-left: 55px;
+    background: url(../images/ico/ico_folder.png) no-repeat 20px center;
+    background-size: auto 18px;
+}
+.table_info_detail table tbody tr td .attachments a span {
+    padding-left: 5px;
+}
+
 /* 탭 */
 .box_pagetab {
     width: 100%;
@@ -699,6 +740,13 @@ select::-ms-expand {
     }
     .table_info table tbody tr td {
         padding: 5px 20px;
+    }
+
+    .table_info_detail table thead tr:nth-child(1) th {
+        font-size: 18px;
+    }
+    .table_info_detail table thead tr:nth-child(2) th {
+        padding: 10px 0;
     }
 
     /* 탭 */
