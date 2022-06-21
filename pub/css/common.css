@@ -58,6 +58,7 @@
     height: 55px;
     border-radius: 5px;
     background-color: var(--btn-color);
+    box-sizing: border-box;
     font-size: var(--font-s);
     font-weight: 500;
     color: #fff;

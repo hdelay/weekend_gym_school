@@ -282,9 +282,11 @@ $('.box_allmenu nav > ul > li').on('click', function(){
 
 // 더보기 버튼
 $('.box_detail_content > .inner > .box_btn *').on('click', function(){
-    console.log('dd');
     $(this).parent().parent().find('.table_data.type_02').addClass('on');
     $(this).parent().parent().find('ul').addClass('on');
+});
+$('.box_btn.type_more *').on('click', function(){
+    $(this).parent().siblings().addClass('on');
 });
 
 // 윈도우 팝업

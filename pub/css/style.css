@@ -1634,6 +1634,7 @@ header > nav > ul > li ul li:hover a::after {
 }
 .table_data.type_03 table tbody tr td {
     padding: 25px 0;
+    color: rgb(153 153 153);
 }
 .table_data.type_03 table tbody tr td a:hover {
     text-decoration: underline;
@@ -1651,6 +1652,140 @@ header > nav > ul > li ul li:hover a::after {
     width: 1200px;
     margin: 90px auto 100px;
     padding-top: 60px;
+}
+
+/* 공모전 */
+.box_list {
+    height: 1512px;
+    overflow-y: hidden;
+}
+.box_list.on {
+    height: auto;
+}
+.box_list ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 7px;
+    box-sizing: border-box;
+}
+.box_list ul li {
+    width: calc(33.33% - 13px);
+    margin-top: 20px;
+    margin-left: 19px;
+}
+.box_list ul li:nth-child(3n+1) {
+    margin-left: 0;
+}
+.box_list ul li:nth-child(1),
+.box_list ul li:nth-child(2),
+.box_list ul li:nth-child(3) {
+    margin-top: 0;
+}
+.box_list ul li a {
+    display: block;
+}
+.box_list ul li a .img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 555px;
+}
+.box_list ul li a .img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.state {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+}
+.state.proceeding {
+    background-color: var(--sub-btn-color);
+}
+.state.end {
+    background-color: rgb(204 204 204);
+}
+.box_list ul li a .info {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(243 243 245);
+}
+.box_list ul li a .info dt {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+.box_list ul li a .info dd {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(153 153 153);
+}
+.box_list ul li a .info dd span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: no-repeat center;
+    background-size: auto 15px;
+    margin-right: 10px;
+}
+.box_list ul li a .info dd.date span {background-image: url(../images/ico/ico_date.png);}
+.box_list ul li a .info dd.time span {background-image: url(../images/ico/ico_time.png);}
+.box_list ul li a .info dd.user span {background-image: url(../images/ico/ico_user.png);}
+.box_list ul li a .info dd.view span {background-image: url(../images/ico/ico_view.png); background-size: 15px auto;}
+
+/* 공모전 상세 */
+.box_competition {
+    margin: -30px 0;
+}
+.box_competition > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 88px 100px;
+    background-color: rgb(243 243 245);
+}
+.box_competition > div .img {
+    width: 284px;
+}
+.box_competition > div .img img {
+    width: 100%;
+}
+.box_competition > div .right {
+    width: 586px;
+}
+.box_competition > div .right * + * {
+    margin-top: 10px;
+}
+.box_competition > div .right .content {
+    padding: 30px 50px;
+    box-sizing: border-box;
+    background-color: #fff;
+    min-height: 220px;
+    color: rgb(153 153 153);
+}
+
+/* 홍보동영상 */
+.box_list.type_02 {
+    height: 979px;
+}
+.box_list.type_02.on {
+    height: auto;
+}
+.box_list.type_02 ul li a .img {
+    height: 216px;
+}
+
+/* 홍보동영상 상세 */
+.table_info_detail table tbody td video {
+    max-width: 100%;
 }
 
 /* 회원정보수정 */
@@ -3056,9 +3191,32 @@ footer {
         padding: 0;
         white-space: inherit;
     }
-    .table_data.type_03 table tbody tr td:nth-child(4),
-    .table_data.type_03 table tbody tr td:nth-child(5) {
+    .table_data.type_03.notice table tbody tr td:nth-child(2) {
+        order: 1;
+    }
+    .table_data.type_03.notice table tbody tr td:nth-child(3) {
+        order: 5;
         margin-left: 20px;
+    }
+    .table_data.type_03.notice table tbody tr td:nth-child(4) {
+        order: 2;
+        width: calc(100% - 171px);
+        text-align: left !important;
+    }
+    .table_data.type_03.notice table tbody tr td:nth-child(5) {
+        order: 4;
+        margin-left: 20px;
+    }
+    .table_data.type_03.notice table tbody tr td:nth-child(6) {
+        display: flex;
+        order: 3;
+        margin-left: 20px;
+        align-items: center;
+    }
+    .table_data.type_03.notice table tbody tr td:nth-child(6) span {
+        width: 15px;
+        height: 80%;
+        margin-top: 2px;
     }
     .table_data.type_03 table tbody tr td a {
         width: 100%;
@@ -3068,6 +3226,66 @@ footer {
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         margin-bottom: 10px;
+    }
+
+    /* 상세 */
+    .box_detail {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
+
+    /* 공모전 */
+    .box_list {
+        height: 2166px;
+        overflow-y: hidden;
+    }
+    .box_list.on {
+        height: auto;
+    }
+    .box_list ul {
+        padding: 0;
+    }
+    .box_list ul li {
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    .box_list ul li a .img {
+        height: 511px;
+    }
+    .box_list ul li a .img img {
+        height: 100%;
+    }
+    .box_list ul li:nth-child(2),
+    .box_list ul li:nth-child(3) {
+        margin-top: 30px;
+    }
+
+    /* 공모전 상세 */
+    .box_competition {
+        width: 100%;
+    }
+    .box_competition > div {
+        padding: 30px 35px;
+        width: 100%;
+    }
+    .box_competition > div .img {
+        width: 100%;
+    }
+    .box_competition > div .right {
+        width: 100%;
+    }
+    .box_competition > div .right .content {
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    /* 홍보동영상 */
+
+    /* 홍보동영상 상세 */
+    .box_list.type_02 ul li a .img {
+        height: 200px;
     }
 
     /* 회원정보수정 */
@@ -3115,13 +3333,6 @@ footer {
     }
     .box_change ul {
         width: 100%;
-    }
-
-    /* 상세 */
-    .box_detail {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 20px;
     }
 
     /* form grid */
