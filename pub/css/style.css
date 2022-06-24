@@ -163,11 +163,23 @@ header > nav > ul > li {
 }
 header > nav > ul > li > a {
     display: flex;
+    position: relative;
     align-items: center;
     height: 100%;
     padding: 0 30px;
     font-size: 20px;
     color: #fff;
+}
+header > nav > ul > li.on > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--sub-btn-color);
 }
 header:hover > nav > ul > li > a {
     color: #fff;
@@ -187,7 +199,6 @@ header > nav > ul > li .box_submenu {
 }
 header > nav > ul > li:nth-child(4) .box_submenu ul {
     justify-content: flex-end;
-    padding-right: 9.4%;
     box-sizing: border-box;
 }
 header > nav > ul > li:nth-child(5) .box_submenu ul {
@@ -669,8 +680,21 @@ header > nav > ul > li ul li:hover a::after {
 .box_main_bottom .left .box_main_search {
     min-width: 400px;
 }
+.box_main_bottom .left .box_main_search dd > * {
+    height: 46px;
+}
+.box_main_bottom .left .box_main_search dd > .box_input input {
+    height: 100%;
+    padding: 10px 50px 10px 35px;
+}
+.box_main_bottom .left .box_main_search dd > .box_select select {
+    padding: 10px 20px 10px 35px;
+}
+.box_main_bottom .left .box_main_search dd > .box_btn * {
+    height: 100%;
+}
 .box_main_search dd > div + div {
-    margin-top: 15px;
+    margin-top: 6px;
 }
 .box_main_bottom .left .box_main_notice {
     width: calc(100% - 400px - 112px - 80px);
@@ -682,7 +706,7 @@ header > nav > ul > li ul li:hover a::after {
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
-    height: 195px;
+    height: 200px;
     box-sizing: border-box;
     box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 20%);
 }
@@ -731,7 +755,7 @@ header > nav > ul > li ul li:hover a::after {
 .box_main_quick_link a {
     display: flex;
     justify-content: center;
-    height: 195px;
+    height: 200px;
     padding: 20px;
     box-sizing: border-box;
     background: url(../images/content/content_main_woman.png) no-repeat;
@@ -1848,6 +1872,9 @@ header > nav > ul > li ul li:hover a::after {
 /* form grid */
 .password_group {
     display: flex;
+    position: absolute;
+    top: 8px;
+    left: 33px;
     align-items: center;
 }
 .password_group > * + * {
@@ -1911,6 +1938,122 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_input_group *.min {
     width: 268px;
+}
+
+/* 달력 */
+.box_calendar .calendar_header {
+    padding: 40px 0;
+    background-color: rgb(243 243 245);
+}
+.box_calendar .calendar_header .inner {
+    display: flex;
+    align-items: center;
+}
+.box_calendar .calendar_header button {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999rem;
+    background: transparent;
+    cursor: pointer;
+}
+.box_calendar .calendar_header button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    margin-top: -8px;
+    border: 2px solid #000;
+    border-width: 0 0 2px 2px;
+}
+.box_calendar .calendar_header button.prev {
+    margin-right: 10px;
+}
+.box_calendar .calendar_header button.next {
+    margin-left: 10px;
+}
+.box_calendar .calendar_header button.prev::after {
+    transform: rotate(45deg);
+    margin-left: -8px;
+}
+.box_calendar .calendar_header button.next::after {
+    transform: rotate(-135deg);
+    margin-left: -8px;
+}
+.box_calendar .calendar_header h5 span {
+    font-size: 32px;
+    font-weight: 600;
+}
+.box_calendar .calendar_header h5 span + span {
+    margin-left: 10px;
+}
+.calendar_dayname {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 30px auto 15px;
+}
+.calendar_dayname li {
+    width: calc(100% / 7);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(153 153 153);
+}
+.calendar_month {
+    width: 1200px;
+    margin: 0 auto;
+}
+.calendar_week ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.calendar_week ul li {
+    width: calc(100% / 7);
+    border-right: 1px solid rgb(214 214 219);
+    border-bottom: 1px solid rgb(214 214 219);
+    box-sizing: border-box;
+    padding: 5px;
+    padding-bottom: 15px;
+    min-height: 170px;
+}
+.calendar_week:nth-child(1) ul li {
+    border-top: 1px solid rgb(214 214 219);
+}
+.calendar_week ul li:nth-child(1) {
+    border-left: 1px solid rgb(214 214 219);
+}
+.calendar_week:last-child ul li {
+    border-bottom: none;
+}
+.calendar_week ul li .day {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: rgb(153 153 153);
+}
+.schedule .schedule_item + .schedule_item {
+    margin-top: 5px;
+}
+.schedule .schedule_item .time {
+    display: block;
+    background-color: rgb(232 232 232);
+    padding: 2px 15px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 12px;
+}
+.schedule .schedule_item .place {
+    display: block;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: 12px;
 }
 
 /* 팝업 */
@@ -2156,6 +2299,18 @@ footer {
 .box_footer_bottom .box_footer_site li a.athletic {background-image: url(../images/content/footer_logo_03.png); width: 83px;}
 .box_footer_bottom .box_footer_site li a.kspo {background-image: url(../images/content/footer_logo_04.png); width: 63px;}
 
+/* 그래프영역 */
+.box_graph {
+    margin: 30px 0;
+}
+.box_graph span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    width: 100%;
+    height: 500px;
+}
 
 @media screen and (max-width: 1500px) {
     /* header */
@@ -2266,6 +2421,7 @@ footer {
     .box_tit h4 strong + .box_btn {
         display: flex;
         justify-content: center;
+        margin-top: 20px;
         width: 100%;
     }
     .box_tit h4 strong + .box_btn * {
@@ -3295,8 +3451,24 @@ footer {
         box-sizing: border-box;
         margin-bottom: 60px;
     }
+    .box_content .box_content_item {
+        padding-top: 30px;
+    }
     .box_content .box_content_item:nth-child(1) {
         padding-bottom: 60px;
+    }
+    .box_content .box_content_item:nth-child(4) {
+        border-top: 1px solid #000;
+        margin-top: 10px;
+    }
+    .password_group {
+        top: 114px;
+        left: 0;
+    }
+    .password_group .password {
+        position: absolute;
+        top: -84px;
+        left: 20px;;
     }
     .password_group .box_btn {
         position: absolute;
@@ -3334,10 +3506,19 @@ footer {
     .box_change ul {
         width: 100%;
     }
+    .box_change .box_input input {
+        border: none;
+    }
+    .box_change ul li .box_btn {
+        margin-top: 20px;
+    }
+    .box_input_group.tell.set > * input {
+        border: 1px solid rgb(204 204 204);
+    }
 
     /* form grid */
     .table_info table tbody tr td .box_input_group {
-        margin: 0 -15px;
+        margin: 0;
     }
     .box_input_group.tell > * {
         width: calc(33.33% - 17px);
@@ -3355,8 +3536,8 @@ footer {
         width: 100%;
     }
     .box_input_group.address > *:nth-child(1) {
-        width: 100%;
-        order: 2;
+        width: calc(50% - 5px);
+        order: 1;
         margin-top: 5px;
     }
     .box_input_group.address > *:nth-child(2) {
@@ -3366,9 +3547,9 @@ footer {
         margin-top: 5px;
     }
     .box_input_group.address > *.box_btn {
-        width: 100%;
-        margin-left: 0;
-        order: 1;
+        width: calc(50% - 5px);
+        margin-left: 10px;
+        order: 2;
     }
     .box_input_group.address > *:nth-child(4) {
         width: 100%;
@@ -3386,18 +3567,63 @@ footer {
         margin-top: 0;
     }
     .box_input_group .box_radio_group .box_radio {
-        margin-left: 20px;
-    }
-    .box_input_group .box_radio_group .box_radio + .box_radio {
-        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        min-height: 55px;
     }
     .box_input_group.birth {
         justify-content: space-between;
     }
+    .box_input_group.birth > *:nth-child(1) {
+        width: calc(100% - 78px - 78px - 30px);
+        min-width: 0;
+    }
     .box_input_group.birth > *:nth-child(2),
     .box_input_group.birth > *:nth-child(3) {
-        width: calc(50% - 3px);
+        width: 78px;
         min-width: 0;
+        margin-top: 0;
+    }
+    .box_radio_group.column + .box_sel.min {
+        width: calc(100% - 140px - 21px);
+        height: 55px;
+        min-width: 0;
+        margin-left: 20px;
+        margin-top: 55px;
+    }
+
+    /* 달력 */
+    .box_calendar .calendar_header {
+        padding: 20px 0;
+    }
+    .box_calendar .calendar_header .inner {
+        justify-content: center;
+    }
+    .box_calendar .calendar_header h5 span {
+        font-size: 18px;
+    }
+    .calendar_dayname,
+    .calendar_month {
+        width: 100%;
+    }
+    .calendar_dayname li {
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .calendar_week ul li {
+        padding: 2px;
+        min-height: 57px;
+    }
+    .calendar_week ul li .day {
+        padding: 0 0 10px 0;
+    }
+    .schedule .schedule_item .time {
+        padding: 2px;
+        font-size: 11px;
+    }
+    .schedule .schedule_item .place {
+        padding: 2px;
+        font-size: 11px;
     }
 
     /* 팝업 */

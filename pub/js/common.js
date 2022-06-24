@@ -320,4 +320,13 @@ $('.box_change .box_btn .btn_white').on('click', function(){
     $('.table_info').removeClass('on');
     $('.change').show();
 });
-    
+
+// window 스크롤 이벤트
+$(window).scroll(function(){
+    let winTop = $(window).scrollTop();
+    console.log(winTop);
+    if(winTop > 1000) {
+        $('.table_responsive .table_notice').delay(1000).fadeOut();
+    }
+});
+  
