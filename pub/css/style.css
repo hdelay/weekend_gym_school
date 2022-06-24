@@ -1941,6 +1941,9 @@ header > nav > ul > li ul li:hover a::after {
 }
 
 /* 달력 */
+.box_calendar {
+    margin-bottom: 60px;
+}
 .box_calendar .calendar_header {
     padding: 40px 0;
     background-color: rgb(243 243 245);
@@ -2026,9 +2029,6 @@ header > nav > ul > li ul li:hover a::after {
 }
 .calendar_week ul li:nth-child(1) {
     border-left: 1px solid rgb(214 214 219);
-}
-.calendar_week:last-child ul li {
-    border-bottom: none;
 }
 .calendar_week ul li .day {
     display: flex;
