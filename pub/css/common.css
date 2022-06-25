@@ -52,6 +52,10 @@
 .color_black {color: #000;}
 .color_blue {color: var(--sub-btn-color);}
 
+/* 배경색 */
+.bg_color_blue {background-color: var(--sub-btn-color); color: #fff;}
+.bg_color_gray {background-color: rgb(153 153 153); color: #fff;}
+
 /* layout */
 .box_layout_50 {
     display: flex;
@@ -64,8 +68,11 @@
 }
 
 /* 버튼 */
-.box_btn a,
-.box_btn button {
+.box_btn {
+    display: flex;
+    justify-content: center;
+}
+.box_btn * {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,6 +86,9 @@
     color: #fff;
     cursor: pointer;
     transition: .2s;
+}
+.box_btn * + * {
+    margin-left: 20px;
 }
 .box_btn a:hover,
 .box_btn button:hover {
@@ -136,6 +146,14 @@
 }
 .box_btn .btn_blue:hover {
     background-color: var(--main-hover-color);
+}
+.box_btn .btn_blue_line {
+    border: 2px solid var(--sub-btn-color);
+    background-color: transparent;
+    color: var(--sub-btn-color);
+}
+.box_btn .btn_blue_line:hover {
+    background-color: transparent;
 }
 .box_btn .btn_add {
     background-color: #000;
@@ -199,6 +217,24 @@
     background-size: 20px;
 }
 
+/* textarea */
+.box_textarea {
+    width: 100%;
+}
+.box_textarea textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    height: 55px;
+    border-radius: 4px;
+    border: 1px solid rgb(204 204 204);
+    color: rgb(153, 153, 153);
+}
+.box_textarea textarea::placeholder {
+    color: rgb(153 153 153);
+}
+
 /* 라디오박스 */
 .box_rdo_group {
     display: flex;
@@ -254,6 +290,7 @@
 .box_radio label {
     position: relative;
     padding-left: 30px;
+    color: rgb(153 153 153);
 }
 .box_radio label::before {
     content: "";
@@ -414,6 +451,28 @@ select::-ms-expand {
 .box_sel select:focus + span {
     transform: rotate(180deg);
 }
+
+/* 파일첨부 */
+.box_file {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.box_file input[type=file] {
+    position: absolute;
+    left: -9999rem;
+}
+.box_file input[type=file] + label {
+    padding-left: 35px;
+    background: url(../images/ico/ico_folder_gray.png) no-repeat left center;
+    background-size: 20px;
+    color: rgb(153 153 153);
+}
+.box_file .file_value {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
 /* 시도선택/시군구선택/종목검색 */
 .box_select_group.type_01 {
     display: flex;
@@ -558,7 +617,6 @@ select::-ms-expand {
 }
 .table_info_detail table tbody tr:nth-child(2) td {
     padding: 20px 0;
-    border-top: 1px solid rgb(238 238 238);
 }
 .table_info_detail table tbody tr td .attachments a {
     display: inline-block;
@@ -753,10 +811,16 @@ select::-ms-expand {
     .box_btn.type_more {
         width: 100%;
     }
+    .box_btn.type_more * {
+        width: 100%;
+        background: #fff;
+        height: 40px;
+        text-indent: 0;
+    }
 
     /* 인풋박스 */
     .box_input input {
-        padding: 10px 15px;
+        padding: 10px;
     }
 
     /* 라디오버튼 */
@@ -779,6 +843,12 @@ select::-ms-expand {
         padding: 15px;
         font-size: var(--font-s);
     }
+
+    /* 파일첨부 */
+    .box_file .file_value {
+        width: calc(100% - 114px);
+    }
+
     /* 시도선택/시군구선택/종목검색 */
     .box_select_group.type_01 {
         display: flex;
@@ -924,7 +994,7 @@ select::-ms-expand {
         padding: 0;
         border-bottom: none;
     }
-    .table_info table tbody tr td .box_radio_group {
+    .table_info table tbody tr td .box_radio_group.column {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -933,10 +1003,9 @@ select::-ms-expand {
         align-items: center;
         min-height: 60px;
     }
-    .box_radio_group .box_radio + .box_radio {
+    .box_radio_group.column .box_radio + .box_radio {
         margin-left: 0;
     }
-
     .table_info_detail table thead tr:nth-child(1) th {
         font-size: 18px;
     }

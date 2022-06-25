@@ -324,9 +324,24 @@ $('.box_change .box_btn .btn_white').on('click', function(){
 // window 스크롤 이벤트
 $(window).scroll(function(){
     let winTop = $(window).scrollTop();
-    console.log(winTop);
     if(winTop > 1000) {
         $('.table_responsive .table_notice').delay(1000).fadeOut();
+    }
+});
+
+// 자주묻는질문
+$('.box_question').on('click', function(e){
+    e.preventDefault();
+    $(this).parent().siblings().removeClass('on');
+    $(this).parent().toggleClass('on');
+});
+
+// 파일선택
+$('.box_file_input').on('change', function(){
+    let files = $(this)[0].files;
+            
+    for(let i = 0; i < files.length; i++){
+        $(this).siblings('.file_value').text(files[i].name);
     }
 });
   

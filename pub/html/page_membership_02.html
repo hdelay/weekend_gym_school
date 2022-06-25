@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신나는 주말체육학교</title>
+
+    <!-- pub:css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- pub:js -->
+    <script defer src="../js/jquery-3.6.0.js"></script>
+    <script defer src="../js/root.js"></script>
+    <script defer src="../js/common.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+    <!-- 헤더 -->
+    <header>
+        <h1 class="logo">
+            <a href="./main.html" title="로고">
+                <span>방과후 스포츠프로그램</span>
+                <strong>신나는 주말체육학교</strong>
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);" title="소개마당">소개마당</a>
+                    <div class="box_submenu">
+                        <ul>
+                            <li><a href="./page_business.html" title="사업개요">사업개요</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" title="연락처정보">연락처정보</a>
+                    <div class="box_submenu">
+                        <ul>
+                            <li><a href="./page_search_city.html" title="시도/시군구 정보">시도/시군구 정보</a></li>
+                            <li><a href="./page_search_sports_club.html" title="공공스포츠클럽 정보">공공스포츠클럽 정보</a></li>
+                            <li><a href="./page_search_tell.html" title="전화번호검색">전화번호검색</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" title="프로그램 운영현황">프로그램 운영현황</a>
+                    <div class="box_submenu">
+                        <ul>
+                            <li><a href="./page_program_01_01.html" title="학교안 프로그램">학교안 프로그램</a></li>
+                            <li><a href="./page_program_02_01.html" title="학교밖 프로그램">학교밖 프로그램</a></li>
+                            <li><a href="./page_program_03_01.html" title="학교밖 프로그램 신청">학교밖 프로그램 신청</a></li>
+                            <li><a href="./page_program_04.html" title="학교밖 모집일정표">학교밖 모집일정표</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" title="현황자료">현황자료</a>
+                    <div class="box_submenu">
+                        <ul>
+                            <li><a href="./page_status_01_01.html" title="강사 현황">강사 현황</a></li>
+                            <li><a href="./page_status_02_01.html" title="참여자 현황">참여자 현황</a></li>
+                            <li><a href="./page_status_03_01.html" title="종목별 현황">종목별 현황</a></li>
+                            <li><a href="./page_status_04_01.html" title="사용자 선택 현황">사용자 선택 현황</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" title="알림마당">알림마당</a>
+                    <div class="box_submenu">
+                        <ul>
+                            <li><a href="./page_notice_01.html" title="공지사항">공지사항</a></li>
+                            <li><a href="./page_faq_01.html" title="FAQ">FAQ</a></li>
+                            <li><a href="./page_competition_01.html" title="공모전">공모전</a></li>
+                            <li><a href="./page_video_01.html" title="홍보동영상">홍보동영상</a></li>
+                            <li><a href="./page_inquiry_01.html" title="문의게시판">문의게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="box_info">
+            <ul>
+                <li class="btn_login"><a href="./html/page_membership_01.html" title="로그인">로그인</a></li>
+                <!-- <li class="btn_logout"><a href="" title="로그아웃">로그아웃</a></li> -->
+                <li class="btn_allmenu">
+                    <a href="" title="전체메뉴">
+                        <strong>전체메뉴</strong>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="box_allmenu">
+            <div class="box_allmenu_cont">
+                <div class="box_allmenu_btn">
+                    <a href="">
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+                <div class="box_allmenu_info">
+                    <div class="logo">
+                        <a href="./main.html" title="로고">
+                            <span>방과후 스포츠프로그램</span>
+                            <strong>신나는 주말체육학교</strong>
+                        </a>
+                    </div>
+                    <ul>
+                        <li class="btn_login"><a href="" title="로그인">로그인</a></li>
+                        <!-- <li class="btn_logout"><a href="" title="로그아웃">로그아웃</a></li> -->
+                        <li class="btn_join"><a href="" title="회원가입">회원가입</a></li>
+                    </ul>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);" title="소개마당">소개마당</a>
+                            <ul>
+                                <li><a href="./page_business.html" title="사업개요">사업개요</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" title="연락처정보">연락처정보</a>
+                            <ul>
+                                <li><a href="./page_search_city.html" title="시도/시군구 정보">시도/시군구 정보</a></li>
+                                <li><a href="./page_search_sports_club.html" title="공공스포츠클럽 정보">공공스포츠클럽 정보</a></li>
+                                <li><a href="./page_search_tell.html" title="전화번호검색">전화번호검색</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" title="프로그램 운영현황">프로그램 운영현황</a>
+                            <ul>
+                                <li><a href="./page_program_01_01.html" title="학교안 프로그램">학교안 프로그램</a></li>
+                                <li><a href="./page_program_02_01.html" title="학교밖 프로그램">학교밖 프로그램</a></li>
+                                <li><a href="./page_program_03_01.html" title="학교밖 프로그램 신청">학교밖 프로그램 신청</a></li>
+                                <li><a href="./page_program_04.html" title="학교밖 모집일정표">학교밖 모집일정표</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" title="현황자료">현황자료</a>
+                            <ul>
+                                <li><a href="./page_status_01_01.html" title="강사 현황">강사 현황</a></li>
+                                <li><a href="./page_status_02_01.html" title="참여자 현황">참여자 현황</a></li>
+                                <li><a href="./page_status_03_01.html" title="종목별 현황">종목별 현황</a></li>
+                                <li><a href="./page_status_04_01.html" title="사용자 선택 현황">사용자 선택 현황</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" title="알림마당">알림마당</a>
+                            <ul>
+                                <li><a href="./page_notice_01.html" title="공지사항">공지사항</a></li>
+                                <li><a href="./page_faq_01.html" title="FAQ">FAQ</a></li>
+                                <li><a href="./page_competition_01.html" title="공모전">공모전</a></li>
+                                <li><a href="./page_video_01.html" title="홍보동영상">홍보동영상</a></li>
+                                <li><a href="./page_inquiry_01.html" title="문의게시판">문의게시판</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 -->
+    <div class="main">
+
+        <div class="keyvisual"><span></span></div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main_content">
+
+            <div class="box_sub_header">
+                <div class="inner">
+                    <div class="box_location">
+                        <ul>
+                            <li><a href="" title="홈으로 이동하기">홈</a></li>
+                            <li><a href="" title="멤버쉽">멤버쉽</a></li>
+                            <li class="on"><a href="" title="회원가입">회원가입</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_tit">
+                        <h2><strong>멤버쉽</strong></h2>
+                    </div>
+                    <div class="box_tit">
+                        <h3>
+                            <strong>회원가입</strong>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box_content">
+                <!-- 보호자 입력란 -->
+                <div class="box_content_item">
+                    <div class="box_tit">
+                        <h5>
+                            <strong>보호자 입력란</strong>
+                        </h5>
+                    </div>
+
+                    <div class="table_info">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="110px" />
+                                <col width="" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="input_01">이름</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" id="input_01" placeholder="이름을 입력하세요.">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_02">아이디</label></th>
+                                    <td>
+                                        <div class="box_input_group id">
+                                            <div class="box_input min">
+                                                <input type="text" id="input_02" placeholder="아이디를 입력하세요.">
+                                            </div>
+                                            <div class="box_btn">
+                                                <button data-animation="ripple" class="btn_white">아이디 중복확인</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_03">비밀번호</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="password" id="input_03" placeholder="비밀번호">
+                                            </div>
+                                            <span class="remark">*영문, 숫자, 특수기호 포함 8~20자리</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_04">비밀번호 확인</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="password" id="input_04" placeholder="비밀번호 확인">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_05">생년월일</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" id="input_05" placeholder="19910910">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="radio_01">성별</label></th>
+                                    <td>
+                                        <div class="box_radio_group">
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_01" name="radio_group_01" checked>
+                                                <label for="radio_01">여자</label>
+                                            </div>
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_02" name="radio_group_01" checked>
+                                                <label for="radio_02">남자</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_06">이메일</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input">
+                                                <input type="text" id="input_06" placeholder="이메일 주소를 입력하세요.">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_07">사용자 연락처</label></th>
+                                    <td>
+                                        <div class="box_input_group tell">
+                                            <div class="box_input">
+                                                <input type="text" value="010" id="input_07">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" value="1234" id="input_08">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" value="1234" id="input_09">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_10">주소</label></th>
+                                    <td>
+                                        <div class="box_input_group address">
+                                            <div class="box_input">
+                                                <input type="text" id="input_10">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" id="input_11">
+                                            </div>
+                                            <div class="box_btn">
+                                                <button data-animation="ripple" class="btn_black">우편번호 찾기</button>
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" id="input_12" placeholder="상세주소를 입력하세요.">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="radio_03">메일 수신 여부</label></th>
+                                    <td>
+                                        <div class="box_radio_group">
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_03" name="radio_group_02" checked>
+                                                <label for="radio_03">수신</label>
+                                            </div>
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_04" name="radio_group_02" checked>
+                                                <label for="radio_04">비수신</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="radio_05">SMS 수신 여부</label></th>
+                                    <td>
+                                        <div class="box_radio_group">
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_05" name="radio_group_03" checked>
+                                                <label for="radio_05">수신</label>
+                                            </div>
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_06" name="radio_group_03" checked>
+                                                <label for="radio_06">비수신</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 신청자 입력란 -->
+                <div class="box_content_item">
+                    <div class="box_tit">
+                        <h5>
+                            <strong>신청자 입력란</strong>
+                        </h5>
+                    </div>
+    
+                    <div class="table_info">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="110px" />
+                                <col width="" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="input_13">이름</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" id="input_13" placeholder="이름을 입력하세요">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="select_01">생년월일</label></th>
+                                    <td>
+                                        <div class="box_input_group birth">
+                                            <div class="box_sel min">
+                                                <select id="select_01">
+                                                    <option value="">년도선택</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                            <div class="box_sel">
+                                                <select id="select_02">
+                                                    <option value="">월</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                            <div class="box_sel">
+                                                <select id="select_03">
+                                                    <option value="">일</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="radio_07">성별</label></th>
+                                    <td>
+                                        <div class="box_radio_group">
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_07" name="radio_group_04" checked>
+                                                <label for="radio_07">남자</label>
+                                            </div>
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_08" name="radio_group_04">
+                                                <label for="radio_08">여자</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_14">연락처(자녀)</label></th>
+                                    <td>
+                                        <div class="box_input_group tell">
+                                            <div class="box_input">
+                                                <input type="text" id="input_14">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" id="input_15">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" id="input_16">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_10">학생구분</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_radio_group column">
+                                                <div class="box_radio">
+                                                    <input type="radio" id="radio_09" name="radio_group_05" checked>
+                                                    <label for="radio_09">학생</label>
+                                                </div>
+                                                <div class="box_radio">
+                                                    <input type="radio" id="radio_10" name="radio_group_05">
+                                                    <label for="radio_10">동 연령대 청소년</label>
+                                                </div>
+                                            </div>
+                                            <div class="box_sel min">
+                                                <select id="">
+                                                    <option value="">일반청소년</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_17">학교명</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" id="input_17" placeholder="학교명을 입력하세요.">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_18">학년/반</label></th>
+                                    <td>
+                                        <div class="box_input_group half">
+                                            <div class="box_input min">
+                                                <input type="text" id="input_18" placeholder="학년">
+                                            </div>
+                                            <div class="box_input min">
+                                                <input type="text" id="input_19" placeholder="반">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box_btn right">
+                        <button data-animation="ripple" class="btn_add">자녀 추가등록</button>
+                    </div>
+
+                    <!-- 자녀2 
+                    <div class="box_tit">
+                        <h6>
+                            <strong>자녀1</strong>
+                        </h6>
+                    </div>
+                    <div class="table_info">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="110px" />
+                                <col width="" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="input_08">이름</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" value="김삿갓" id="input_08">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="select_01">생년월일</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_sel min">
+                                                <select id="select_01">
+                                                    <option value="">1920</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                            <div class="box_sel">
+                                                <select id="select_02">
+                                                    <option value="">01</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                            <div class="box_sel">
+                                                <select id="select_03">
+                                                    <option value="">04</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="radio_06">성별</label></th>
+                                    <td>
+                                        <div class="box_radio_group">
+                                            <div class="box_radio">
+                                                <input type="radio" id="radio_06" name="radio_group_04" checked disabled>
+                                                <label for="radio_06">남자</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_10">연락처(자녀)</label></th>
+                                    <td>
+                                        <div class="box_input_group tell">
+                                            <div class="box_input">
+                                                <input type="text" value="010" id="input_10">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" value="1234" id="input_11">
+                                            </div>
+                                            <div class="box_input">
+                                                <input type="text" value="1234" id="input_12">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_10">학생구분</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_radio_group">
+                                                <div class="box_radio">
+                                                    <input type="radio" id="radio_06" name="radio_group_05" checked disabled>
+                                                    <label for="radio_06">남자</label>
+                                                </div>
+                                                <div class="box_radio">
+                                                    <input type="radio" id="radio_06" name="radio_group_05" checked disabled>
+                                                    <label for="radio_06">남자</label>
+                                                </div>
+                                            </div>
+                                            <div class="box_sel min">
+                                                <select id="">
+                                                    <option value="">일반청소년</option>
+                                                </select>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_13">학교명</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" value="가나중" id="input_13">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="input_14">학년/반</label></th>
+                                    <td>
+                                        <div class="box_input_group">
+                                            <div class="box_input min">
+                                                <input type="text" value="3" id="input_14">
+                                            </div>
+                                            <div class="box_input min">
+                                                <input type="text" value="3" id="input_15">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box_btn right">
+                        <button data-animation="ripple" class="btn_add">자녀 추가등록</button>
+                    </div>-->
+                
+                </div>
+
+                <div class="box_btn">
+                    <a href="" data-animation="ripple" class="btn_gray">취소</a>
+                    <a href="" data-animation="ripple" class="btn_blue">등록</a>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- // 메인 컨텐츠 -->
+
+    </div>
+    
+    <!-- 공공누리 카피라이트 -->
+    <div class="box_nuri_copyright">
+        <dl>
+            <dt><img src="../images/content/logo_opennuri.svg" alt="공공누리 로고"></dt>
+            <dd>대한체육회가 창작한 저작물은 "공공누리" 출처표시 조건에 따라 이용할 수 있습니다.(출처는 구체적인 위치를 표시해야 합니다.)</dd>
+        </dl>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="box_footer_top">
+            <dl class="box_footer_link">
+                <dt>
+                    <a href="" title="대한체육회 바로가기">대한체육회</a>
+                </dt>
+                <dd><a href="" title="개인정보처리방침 바로가기">개인정보처리방침</a></dd>
+                <dd><a href="" title="이메일무단수집거부 바로가기">이메일무단수집거부</a></dd>
+                <dd><a href="" title="시도/시군구 연락처정보 바로가기">시도/시군구 연락처정보</a></dd>
+            </dl>
+            <div class="box_family">
+                <ul>
+                    <li>
+                        <a href="" title="패밀리사이트">Family Site</a>
+                        <ul>
+                            <li><a href="">Family Site</a></li>
+                            <li><a href="">Family Site</a></li>
+                            <li><a href="">Family Site</a></li>
+                            <li><a href="">Family Site</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_footer_bottom">
+            <ul class="box_footer_info">
+                <li><address>[05540]서울특별시 송파구 올림픽로 424 올림픽문화(올림픽컨벤션)센터</address></li>
+                <li>
+                    <span>기술지원 : (주)조인트리시스템</span>
+                    <span>문의전화 : 02-2135-5870</span>
+                    <span>이메일 : jsh418@jointree.co.kr</span>
+                </li>
+                <li>Copyrightⓒ 2016 Korean Sport & Olympic Committee. All Rights Reserved.</li>
+            </ul>
+            <ul class="box_footer_site">
+                <li><a href="" class="edu" title="교육부 바로가기">교육부</a></li>
+                <li><a href="" class="culture" title="문화체육관광부 바로가기">문화체육관광부</a></li>
+                <li><a href="" class="athletic" title="대한체육회 바로가기">대한체육회</a></li>
+                <li><a href="" class="kspo" title="kspo 바로가기">kspo</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
