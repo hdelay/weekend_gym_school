@@ -175,7 +175,7 @@ header > nav > ul > li.on > a::before {
     display: block;
     position: absolute;
     top: 28px;
-    left: 4px;
+    left: 9%;
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -197,11 +197,9 @@ header > nav > ul > li .box_submenu {
     background: #222;
     transition: .2s;
 }
-header > nav > ul > li:nth-child(4) .box_submenu ul {
-    justify-content: flex-end;
-    box-sizing: border-box;
-}
-header > nav > ul > li:nth-child(5) .box_submenu ul {
+header > nav > ul > li:nth-child(4) .box_submenu ul,
+header > nav > ul > li:nth-child(5) .box_submenu ul,
+header > nav > ul > li:nth-child(6) .box_submenu ul {
     justify-content: flex-end;
     box-sizing: border-box;
 }
@@ -1345,7 +1343,6 @@ header > nav > ul > li ul li:hover a::after {
     display: flex;
     overflow-y: hidden;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: baseline;
     height: 545px;
     padding: 8px;
@@ -1365,6 +1362,12 @@ header > nav > ul > li ul li:hover a::after {
     min-height: 579px;
     box-shadow: 0px 2px 8px 4px rgb(0 0 0 / 15%);
     margin-top: 30px;
+}
+.box_detail_list ul li + li {
+    margin-left: 30px;
+}
+.box_detail_list ul li:nth-child(3n+1) {
+    margin-left: 0;
 }
 .box_detail_list ul li:nth-child(1),
 .box_detail_list ul li:nth-child(2),
@@ -1656,12 +1659,14 @@ header > nav > ul > li ul li:hover a::after {
 .box_search_form.type_06 .inner {
     justify-content: flex-end;
 }
+.box_search_form.type_06 .inner * + * {
+    margin-left: 20px;
+}
 .box_search_form.type_06 .box_input {
     width: 372px;
 }
 .box_search_form.type_06 .box_btn {
     width: 180px;
-    margin-left: 20px;
 }
 .table_data.type_03 table tbody tr td {
     padding: 25px 0;
@@ -2670,7 +2675,7 @@ footer {
     /* header */
     header > nav > ul > li > a {
         padding: 0 16px;
-        font-size: 20px;
+        font-size: 16px;
     }
     /* 메인 */
     .box_main_quick ul li a .left {
@@ -3556,9 +3561,6 @@ footer {
         font-size: 12px;
     }
     
-    .box_detail_content {
-        margin-bottom: 60px;
-    }
     .box_detail_map {
         width: 100%;
         padding: 0 20px;
@@ -3573,12 +3575,16 @@ footer {
 
     .box_detail_content {
         margin-top: 60px;
+        margin-bottom: 60px;
         padding: 0 20px;
         box-sizing: border-box;
     }
     .box_detail_content h4 {
         font-size: 24px;
         margin-bottom: 20px;
+    }
+    .box_detail_content .table_data.type_02 table tbody tr td:nth-child(3) {
+        width: 100%
     }
 
     /* 학교 밖 프로그램 */
@@ -3616,9 +3622,23 @@ footer {
         width: 100%;
         margin-top: 20px;
     }
+    .box_search_result .box_info_list ul {
+        margin: 0;
+    }
     .box_search_result .box_info_list.type_02 ul li .left {
         padding-right: 0;
-        max-width: 160px;
+        max-width: 100%;
+        width: calc(100% - 154px);
+    }
+    .box_search_result .box_info_list.type_02 ul li .left .top {
+        flex-wrap: wrap;
+    }
+    .box_search_result .box_info_list.type_02 ul li .left .top a {
+        margin-left: 0;
+    }
+    .box_search_result .box_info_list.type_02 ul li .left .top span {
+        margin-right: 10px;
+        height: 25px;
     }
     .box_search_result .box_info_list.type_02 ul li .left .bottom {
         padding: 0;
@@ -3685,6 +3705,9 @@ footer {
     }
 
     /* 공지사항 */
+    .box_search_form.type_06 .box_sel {
+        width: calc(50% - 20px);
+    }
     .box_search_form.type_06 .box_input {
         width: calc(100% - 78px - 15px);
     }
@@ -3703,6 +3726,7 @@ footer {
     }
     .table_data.type_03.notice table tbody tr td:nth-child(2) {
         order: 1;
+        width: 100%;
     }
     .table_data.type_03.notice table tbody tr td:nth-child(3) {
         order: 5;
