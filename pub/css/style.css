@@ -1928,6 +1928,14 @@ header > nav > ul > li ul li:hover a::after {
     align-items: center;
     width: 100px;
     padding-right: 20px;
+    min-width: 0;
+}
+.box_input_group.tell .box_sel {
+    padding-right: 0;
+    margin-right: 20px;
+}
+.box_input_group.tell .box_sel span {
+    right: 15px;
 }
 .box_input_group.tell > *::after {
     content: "-";
@@ -1935,6 +1943,9 @@ header > nav > ul > li ul li:hover a::after {
     top: 50%;
     right: -3px;
     transform: translateY(-50%);
+}
+.box_input_group.tell > *:first-child::after {
+    right: -22px;
 }
 .box_input_group.tell > *:last-child::after {
     display: none;
@@ -1963,6 +1974,18 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_input_group.id .box_btn {
     width: 180px;
+}
+.box_input_group.email {
+    align-items: center;
+}
+.box_input_group.email .box_input {
+    min-width: 0;
+}
+.box_input_group.email > *:nth-child(1) {
+    width: 268px;
+}
+.box_input_group.email > *:nth-child(3) {
+    width: 200px;
 }
 span.remark {
     display: flex;
@@ -2661,6 +2684,11 @@ footer {
 /* 그래프영역 */
 .box_graph {
     margin: 30px 0;
+}
+.box_graph canvas {
+    background-color:rgb(243,243,245);
+    width: 100%;
+    max-height: 500px;
 }
 .box_graph span {
     display: flex;
@@ -3706,10 +3734,13 @@ footer {
 
     /* 공지사항 */
     .box_search_form.type_06 .box_sel {
-        width: calc(50% - 20px);
+        width: calc(50% - 10px);
+        min-width: 0;
+        margin-bottom: 10px;
     }
     .box_search_form.type_06 .box_input {
         width: calc(100% - 78px - 15px);
+        margin-left: 0;
     }
     .box_search_form.type_06 .box_btn {
         width: 78px;
@@ -3898,12 +3929,20 @@ footer {
     .table_info table tbody tr td .box_input_group {
         margin: 0;
     }
+    .box_input_group.tell .box_sel {
+        min-width: 0;
+        margin-right: 10px;
+    }
+    .box_input_group.tell > *:first-child::after {
+        right: -13px;
+    }
     .box_input_group.tell > * {
         width: calc(33.33% - 17px);
         padding-right: 10px;
     }
     .box_input_group.tell > * + * {
         margin-left: 10px;
+        margin-top: 0;
     }
     .box_input_group.tell.set > * input {
         padding: 5px;
@@ -3982,6 +4021,19 @@ footer {
     .box_input_group.id .box_btn {
         width: 150px;
         margin: 0;
+    }
+    .box_input_group.email {
+        display: flex;
+    }
+    .box_input_group.email > *:nth-child(1) {
+        width: 100px;
+    }
+    .box_input_group.email > *:nth-child(2) {
+        width: 40px;
+        text-align: center;
+    }
+    .box_input_group.email > *:nth-child(3) {
+        width: calc(100% - 100px - 40px);
     }
 
     /* 달력 */

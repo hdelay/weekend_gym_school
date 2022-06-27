@@ -383,6 +383,34 @@
     transform: rotate(-45deg) translateX(-70%);
 }
 
+.box_chk_group.type_02 {}
+.box_chk_group.type_02 .box_chk label {
+    display: flex;
+    padding: 15px 20px;
+    padding-right: 70px;
+    height: 55px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: var(--font-common);
+    border: 2px solid rgb(153 153 153);
+    color: #999;
+}
+.box_chk_group.type_02 .box_chk label::before {
+    display: none;
+}
+.box_chk_group.type_02 .box_chk label::after {
+    left: inherit;
+    top: 22px;
+    right: 18px;
+    border-color: rgb(153 153 153);
+    border-width: 0 0 2px 2px;
+}
+.box_chk_group.type_02 .box_chk input[type="checkbox"]:checked + label {
+    border-color: var(--sub-btn-color);
+    color: var(--sub-btn-color);
+}
+
 /* 셀렉트박스 */
 select::-ms-expand { 
 	display: none;
