@@ -207,9 +207,9 @@ header > nav > ul > li ul {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 730px;
+    width: 820px;
     height: 100%;
-    transform: translateX(-41%);
+    transform: translateX(-44%);
 }
 header > nav > ul > li.on .box_submenu {
     height: 45px;
@@ -312,10 +312,10 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_allmenu .box_allmenu_cont {
     display: block;
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-color: #fff;
-    padding: 0 20px;
+    padding: 10px 70px;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -342,33 +342,86 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_allmenu .box_allmenu_info {
     display: flex;
-    justify-content: center;
-    padding-top: 150px;
-    padding-bottom: 57px;
+    flex-wrap: wrap;
+    padding: 40px 0 0;
 }
 .box_allmenu .box_allmenu_info .logo a {
     width: auto;
-    padding-left: 93px;
+    padding-left: 65px;
     background: url(../images/content/allmenu_logo.png) no-repeat left center;
-    background-size: 83.5px 83.5px;
+    background-size: auto 55px;
 }
 .box_allmenu .box_allmenu_info .logo span {
-    font-size: 23px;
+    font-size: 16px;
     color: #000;
 }
 .box_allmenu .box_allmenu_info .logo strong {
-    font-size: 35px;
+    font-size: 25px;
     color: #000;
 }
-.box_allmenu .box_allmenu_info ul {
-    display: none;
+.box_allmenu .box_allmenu_info .box_util {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 10px 25px;
+    width: 100%;
 }
+.box_allmenu nav > .box_util {
+    margin: 0;
+}
+.box_allmenu nav > .box_util > li.on {
+    border-bottom: none;
+}
+.box_allmenu nav > .box_util > li:first-child {
+    border-top: none;
+}
+.box_allmenu nav > .box_util > li > ul {
+    margin: 0 -20px;
+}
+.box_allmenu .box_allmenu_info .box_util li + li {
+    margin-left: 30px;
+}
+.box_allmenu .box_allmenu_info .box_util li.btn_login a {
+    display: block;
+    padding-left: 22px;
+    background: url(../images/ico/ico_login_mo.png) no-repeat left center;
+    background-size: 14px;
+}
+.box_allmenu .box_allmenu_info .box_util .util_content {
+    display: flex;
+    align-items: center;
+}
+.box_allmenu .box_allmenu_info .box_util .util_result {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+.box_allmenu .box_allmenu_info .box_util .util_result li strong {
+    display: flex;
+    font-weight: 600;
+}
+.box_allmenu .box_allmenu_info .box_util .util_result li.btn_logout a {
+    display: flex;
+    padding: 5px 10px;
+    background-color: #eee;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.box_allmenu .box_etc {
+    padding: 30px 20px;
+}
+.box_allmenu .box_etc li + li {
+    margin-top: 15px;
+}
+.box_allmenu .box_etc li a {
+    color: rgb(102 102 102);
+}
+
 .box_allmenu nav {
-    width: 866px;
+    width: 100%;
     margin: 0 auto;
 }
-.box_allmenu nav > ul {
-    margin: 0 -20px;
+.box_allmenu nav .box_util {
+    
 }
 .box_allmenu nav > ul > li > a::after {
     content: "";
@@ -394,7 +447,7 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_allmenu nav > ul > li > a {
     display: block;
-    padding: 25px 20px;
+    padding: 20px 20px;
     font-weight: 600;
 }
 .box_allmenu nav > ul > li > ul {
@@ -410,6 +463,9 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_allmenu nav > ul > li > ul > li:last-child > a {
     border-bottom: none;
+}
+.box_allmenu nav > ul > li > ul > li:hover > a {
+    color: var(--sub-btn-color);
 }
 
 /* main */
@@ -2698,12 +2754,25 @@ footer {
     width: 100%;
     height: 500px;
 }
+.box_graph_btn {
+    margin: 30px 0;
+}
+.box_graph_btn > * {
+    justify-content: center;
+}
+.box_graph_btn > * + * {
+    margin-top: 10px;
+}
 
 @media screen and (max-width: 1500px) {
     /* header */
     header > nav > ul > li > a {
         padding: 0 16px;
         font-size: 16px;
+    }
+    header > nav > ul > li ul {
+        width: 590px;
+        transform: translateX(-41%);
     }
     /* 메인 */
     .box_main_quick ul li a .left {
@@ -2858,6 +2927,12 @@ footer {
     .box_allmenu nav {
         width: 100%;
     }
+    .box_allmenu nav > ul {
+        margin: 0 -20px;
+    }
+    .box_allmenu nav > ul > li > a::after {
+        top: 29px;
+    }
     .box_allmenu .box_allmenu_cont {
         width: 90%;
         padding: 0 20px;
@@ -2869,31 +2944,35 @@ footer {
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        height: 110px;
-        border-bottom: 1px solid #eee;
+        height: auto;
         padding: 0;
     }
-    .box_allmenu .box_allmenu_info ul {
+    .box_allmenu .box_allmenu_info .box_util {
         display: flex;
-        padding-bottom: 12.8px;
+        padding-bottom: 20px;
     }
-    .box_allmenu nav > ul {
+    .box_allmenu nav > .box_util {
         margin: 0;
     }
-    .box_allmenu nav > ul > li.on {
+    .box_allmenu nav > .box_util > li.on {
         border-bottom: none;
     }
-    .box_allmenu nav > ul > li:first-child {
+    .box_allmenu nav > .box_util > li:first-child {
         border-top: none;
     }
-    .box_allmenu nav > ul > li > ul {
+    .box_allmenu nav > .box_util > li > ul {
         margin: 0 -20px;
     }
-    .box_allmenu .box_allmenu_info ul li + li {
+    .box_allmenu .box_allmenu_info .box_util li + li {
         margin-left: 30px;
     }
-    .box_allmenu .box_allmenu_info ul li.btn_login a {
-        display: block;
+    .box_allmenu .box_allmenu_info .box_util li * {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    .box_allmenu .box_allmenu_info .box_util li.btn_login a {
+        display: flex;
         padding-left: 22px;
         background: url(../images/ico/ico_login_mo.png) no-repeat left center;
         background-size: 14px;
@@ -2901,6 +2980,18 @@ footer {
     .box_allmenu .box_allmenu_cont .box_allmenu_btn a {
         top: 15px;
         right: 15px;
+    }
+    .box_allmenu .box_allmenu_info .box_util .util_result li.btn_logout a {
+        font-size: 12px;
+    }
+    .box_allmenu .box_etc {
+        padding: 30px 0;
+    }
+    .box_allmenu .box_etc li + li {
+        margin-top: 5px;
+    }
+    .box_allmenu .box_etc li a {
+        font-size: 14px;
     }
 
     /* main */
@@ -3565,6 +3656,9 @@ footer {
         min-height: inherit;
         margin-bottom: 20px;
         margin-top: 0;
+    }
+    .box_detail_list ul li + li {
+        margin-left: 0;
     }
     .box_detail_list ul li:last-child {
         margin-bottom: 0;
@@ -4343,4 +4437,39 @@ footer {
     .box_footer_bottom .box_footer_site li a.culture {width: 93px;}
     .box_footer_bottom .box_footer_site li a.athletic {width: 68px;}
     .box_footer_bottom .box_footer_site li a.kspo {width: 60px;}
+
+    /* 그래프 */
+    .box_graph_btn > * {
+        flex-wrap: wrap;
+    }
+    .box_graph_btn .box_chk_group.type_02 .box_chk label {
+        width: 100%;
+        padding: 10px 0;
+        padding-left: 40px;
+        height: auto;
+        border-radius: 5px;
+    }
+    .box_graph_btn .box_chk_group.type_02 .box_chk label::after {
+        top: 16px;
+    }
+    .box_graph_btn .box_chk_group.type_02 .box_chk {
+        width: calc(50% - 5px);
+        margin-top: 5px;
+    }
+    .box_graph_btn .box_chk_group .box_chk + .box_chk {
+        margin-left: 5px;
+    }
+    .box_graph_btn .box_rdo_group.type_02 .box_rdo {
+        width: calc(50% - 5px);
+        margin-top: 5px;
+    }
+    .box_graph_btn .box_rdo_group.type_02 .box_rdo + .box_rdo {
+        margin-left: 5px;
+    }
+    .box_graph_btn .box_rdo_group.type_02 .box_rdo label {
+        width: 100%;
+        padding: 10px 0;
+        padding-left: 40px;
+        height: auto;
+    }
 }

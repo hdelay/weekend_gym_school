@@ -251,6 +251,7 @@ $('.btn_allmenu a').on('click', function(e){
         $('.box_allmenu').animate({
             right: 0
         });
+        $("body").css("overflow", "hidden");
     }
 });
 
@@ -264,6 +265,7 @@ $('.box_allmenu_btn a').on('click', function(e){
         $('.box_allmenu').animate({
             right: -100 + '%'
         });
+        $("body").css("overflow", "inherit");
     }
 });
 
