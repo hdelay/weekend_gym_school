@@ -346,4 +346,15 @@ $('.box_file_input').on('change', function(){
         $(this).siblings('.file_value').text(files[i].name);
     }
 });
+
+// 지도여닫기
+$('.box_info_header').on('click', function(){
+    $('.box_infomation').toggleClass('on');
+});
+
+// 핀 닫기
+$('.box_map_group .close').on('click', function(e){
+    e.preventDefault();
+    $(this).parent().parent().hide();
+});
   
