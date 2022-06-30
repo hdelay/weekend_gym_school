@@ -2934,6 +2934,27 @@ span.remark {
     background-color: var(--main-color);
 }
 
+/* 신청확인 팝업 */
+.box_pop_content.type_01 .table_data.confirm table tbody tr.on td {
+    background-color: rgba(34, 138, 243, 0.1);
+}
+
+/* 자녀선택 팝업 */
+.box_pop_content dl dd .box_radio_group {
+    margin: 30px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid rgb(204 204 204);
+    border-bottom: 1px solid rgb(204 204 204);
+}
+.box_pop_content dl dd .box_radio_group > * {
+    margin-left: 0 !important;
+}
+.box_pop_content dl dd .box_radio_group > * + * {
+    margin-top: 20px;
+}
+
 /* 공공누리 카피라이트 */
 .box_nuri_copyright {
     border-top: 1px solid #ddd;
@@ -4759,7 +4780,7 @@ footer {
         margin-bottom: 20px;
         font-size: 18px;
     }
-    .box_pop_content.type_01 .table_row table tbody tr th {
+    .box_pop_content.type_01 .table_row table thead tr th {
         width: 92px;
     }
     .box_pop_content.type_01 .table_row table tbody tr td {
@@ -4807,6 +4828,34 @@ footer {
         justify-content: center;
         padding: 20px 0;
     }
+
+    /* 신청확인 팝업 */
+    .box_pop_content.type_01 .table_data.confirm table thead tr th {
+        width: calc(100% / 7);
+        font-size: 10px;
+    }
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td {
+        white-space: inherit;
+        overflow: inherit;
+        text-overflow: inherit;
+        padding: 15px 5px;
+        width: calc(100% / 7);
+        font-size: 12px;
+    }
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(1),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(1) {width: 10%;}
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(2),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(2) {width: 22%;}
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(3),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(3) {width: 20%;}
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(4),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(4) {width: 7%;}
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(5),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(5) {width: 6%;}
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(6),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(6) {width: 15%;}
+    .box_pop_content.type_01 .table_data.confirm table thead tr th:nth-child(7),
+    .box_pop_content.type_01 .table_data.confirm table tbody tr td:nth-child(7) {width: 20%;}
 
     /* 공공누리 */
     .box_nuri_copyright {
