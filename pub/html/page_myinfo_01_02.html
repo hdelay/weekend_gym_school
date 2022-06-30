@@ -336,15 +336,21 @@
                                 <tr>
                                     <th scope="row"><label for="input_01">사용자 연락처</label></th>
                                     <td>
-                                        <div class="box_input_group tell set">
-                                            <div class="box_input">
-                                                <input type="text" value="010" id="input_01" disabled>
+                                        <div class="box_input_group tell">
+                                            <div class="box_sel">
+                                                <select id="input_10">
+                                                    <option value="">선택</option>
+                                                    <option value="">선택</option>
+                                                    <option value="">선택</option>
+                                                    <option value="">선택</option>
+                                                </select>
+                                                <span></span>
                                             </div>
                                             <div class="box_input">
-                                                <input type="text" value="1234" id="input_02" disabled>
+                                                <input type="text" value="1234" id="input_11">
                                             </div>
                                             <div class="box_input">
-                                                <input type="text" value="1234" id="input_03" disabled>
+                                                <input type="text" value="1234" id="input_12">
                                             </div>
                                         </div>
                                     </td>
@@ -579,14 +585,11 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="box_btn right">
-                        <button data-animation="ripple" class="btn_add">자녀 추가등록</button>
-                    </div>
-
-                    <!-- 자녀2 
+                    
+                    <!-- 자녀2 -->
                     <div class="box_tit">
                         <h6>
-                            <strong>자녀1</strong>
+                            <strong>자녀2</strong>
                         </h6>
                     </div>
                     <div class="table_info">
@@ -647,8 +650,14 @@
                                     <th scope="row"><label for="input_10">연락처(자녀)</label></th>
                                     <td>
                                         <div class="box_input_group tell">
-                                            <div class="box_input">
-                                                <input type="text" value="010" id="input_10">
+                                            <div class="box_sel">
+                                                <select id="input_10">
+                                                    <option value="">선택</option>
+                                                    <option value="">선택</option>
+                                                    <option value="">선택</option>
+                                                    <option value="">선택</option>
+                                                </select>
+                                                <span></span>
                                             </div>
                                             <div class="box_input">
                                                 <input type="text" value="1234" id="input_11">
@@ -663,14 +672,14 @@
                                     <th scope="row"><label for="input_10">학생구분</label></th>
                                     <td>
                                         <div class="box_input_group">
-                                            <div class="box_radio_group">
+                                            <div class="box_radio_group column">
                                                 <div class="box_radio">
-                                                    <input type="radio" id="radio_06" name="radio_group_05" checked disabled>
-                                                    <label for="radio_06">남자</label>
+                                                    <input type="radio" id="radio_09" name="radio_group_05" checked="">
+                                                    <label for="radio_09">학생</label>
                                                 </div>
                                                 <div class="box_radio">
-                                                    <input type="radio" id="radio_06" name="radio_group_05" checked disabled>
-                                                    <label for="radio_06">남자</label>
+                                                    <input type="radio" id="radio_10" name="radio_group_05">
+                                                    <label for="radio_10">동 연령대 청소년</label>
                                                 </div>
                                             </div>
                                             <div class="box_sel min">
@@ -708,9 +717,11 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- 자녀추가등록 버튼 -->
                     <div class="box_btn right">
                         <button data-animation="ripple" class="btn_add">자녀 추가등록</button>
-                    </div>-->
+                    </div>
                 
                 </div>
 

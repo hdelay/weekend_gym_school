@@ -486,9 +486,6 @@ header > nav > ul > li ul li:hover a::after {
     padding-top: 90px;
     box-sizing: border-box;
 }
-.main-display .main {
-    min-height: 990px;
-}
 .main .keyvisual {
     position: absolute;
     top: 0;
@@ -1085,6 +1082,7 @@ header > nav > ul > li ul li:hover a::after {
 .box_search_result .box_info_card > ul > li:last-child {
     padding-bottom: 0;
     border-bottom: none;
+    justify-content: flex-end;
 }
 .box_search_result .box_info_card > ul > li > span em {
     color: var(--sub-btn-color);
@@ -1165,6 +1163,15 @@ header > nav > ul > li ul li:hover a::after {
     margin-top: 10px;
     font-size: 15px;
     color: var(--sub-btn-color);
+}
+/* 20220630 개발요청사항 추가 */
+.box_search_result .box_info_list > ul li a span span {
+    display: inline;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #999;
 }
 
 .result_none {
@@ -1309,7 +1316,7 @@ header > nav > ul > li ul li:hover a::after {
     margin-top: 60px;
     padding: 80px 0;
     background-color: rgb(243 243 245);
-    height: 395px;
+    min-height: 395px;
 }
 .box_detail_program_info .inner {
     display: flex;
@@ -1374,8 +1381,9 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_detail_program_info .inner > dl dd .box_table_cont {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    margin-top: 30px;
 }
 .box_detail_program_info .inner > dl dd .box_table_cont .box_btn {
     width: 196px;
@@ -1394,11 +1402,12 @@ header > nav > ul > li ul li:hover a::after {
     font-weight: 600;
 }
 .box_detail_table .table_data.type_02 {
-    height: 300px;
+    max-height: 300px;
     overflow-y: hidden;
 }
 .box_detail_table .table_data.type_02.on {
     height: auto;
+    max-height: 100%;
     overflow-y: inherit;
 }
 .box_detail_table .table_data.type_02.on + .box_btn {
@@ -1538,9 +1547,11 @@ header > nav > ul > li ul li:hover a::after {
 .box_search_form.type_04 dl dd .box_rdo label span span {
     display: block;
     border-radius: 13px;
+    min-width: 35px;
     padding: 2px 5px;
     background-color: #000;
     margin-left: 10px;
+    text-align: center;
     color: #fff;
     font-size: 13px;
 }
@@ -1994,6 +2005,9 @@ header > nav > ul > li ul li:hover a::after {
     width: 180px;
     min-width: 0;
 }
+.box_content_item .table_info {
+    margin-bottom: 30px;
+}
 .box_content > .box_btn {
     display: flex;
     justify-content: center;
@@ -2013,6 +2027,7 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_content_item .table_info.on + .box_change {
     display: block;
+    margin-top: -30px;
 }
 .box_change ul {
     width: 374px;
@@ -2036,6 +2051,7 @@ header > nav > ul > li ul li:hover a::after {
     top: 8px;
     left: 33px;
     align-items: center;
+    height: 55px;
 }
 .password_group > * + * {
     margin-left: 130px;
@@ -2588,13 +2604,13 @@ span.remark {
     height: 100vh;
 }
 .box_infomation {
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     left: 15px;
     width: 386px;
     background-color: #fff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    z-index: 2;
+    z-index: 100;
 }
 .box_map_group .close {
     display: flex;
@@ -2774,6 +2790,18 @@ span.remark {
 .box_info_content .list li a span {
     display: block;
     max-width: 80%;
+}
+.box_infomation .box_btn {
+    width: 100%;
+}
+.box_infomation .box_btn a {
+    min-width: 0;
+    flex: 1;
+    height: 40px;
+    font-size: 12px;
+}
+.box_infomation .box_btn a + a {
+    margin-left: 10px;
 }
 .box_map_pin {
     position: absolute;
@@ -3264,7 +3292,9 @@ footer {
     header > nav {
         display: none;
     }
-    .box_info li.btn_login {
+    .box_info li.btn_login,
+    .box_info li.box_info_name,
+    .box_info li.btn_logout {
         display: none;
     }
     .box_info li + li {
@@ -3864,17 +3894,17 @@ footer {
         margin-left: 0;
         margin-top: 10px;
     }
-    .box_search_form.type_03 dl dd .box_rdo_group {
+    .box_search_form.type_03 dl dd .box_chk_group.type_03 {
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .box_search_form.type_03 dl dd .box_rdo {
+    .box_search_form.type_03 dl dd .box_chk {
         width: calc(50% - 5px);
         margin-left: 0;
         margin-top: 6px;
     }
-    .box_search_form.type_03 dl dd .box_rdo:nth-child(1),
-    .box_search_form.type_03 dl dd .box_rdo:nth-child(2) {
+    .box_search_form.type_03 dl dd .box_chk:nth-child(1),
+    .box_search_form.type_03 dl dd .box_chk:nth-child(2) {
         margin-top: 0;
     }
     .box_search_form.type_03 .inner > .box_btn {
@@ -3991,17 +4021,16 @@ footer {
         left: 0;
         font-size: 24px;
     }
-    .box_detail_program_info .inner > dl dd .box_table_cont span {
-        width: calc(100% - 30px);
+    .box_detail_program_info .inner > dl dd .box_table_cont {
+        margin-top: 10px;
     }
     .box_detail_program_info .inner > dl dd .box_table_cont .box_btn {
-        width: 40px;
-        margin-right: -20px;
+        width: 100%;
     }
     .box_detail_program_info .inner > dl dd .box_table_cont .box_btn a.email {
         height: 40px;
-        text-indent: -9999rem;
-        background-position: center;
+        text-indent: -20px;
+        background-position: 59% 15px;
     }
 
     .box_detail_list ul {
@@ -4042,7 +4071,6 @@ footer {
         width: 100%;
         padding: 0 20px;
         box-sizing: border-box;
-        height: 310px;
         margin-bottom: 60px;
     }
     .box_detail_map img {
@@ -4357,7 +4385,7 @@ footer {
     }
     .password_group .box_btn {
         position: absolute;
-        bottom: -15px;
+        bottom: 50px;
         left: 0;
         margin-left: 0;
         width: calc(100vw - 40px);
@@ -4501,6 +4529,9 @@ footer {
     .box_input_group.email {
         display: flex;
     }
+    .box_input_group.email > * {
+        margin-top: 0;
+    }
     .box_input_group.email > *:nth-child(1) {
         width: 150px;
     }
@@ -4510,6 +4541,9 @@ footer {
     }
     .box_input_group.email > *:nth-child(3) {
         width: calc(100% - 150px - 40px);
+    }
+    .box_input_group.email > *:nth-child(4) {
+        margin-top: 5px;
     }
 
     /* 달력 */
@@ -4660,10 +4694,11 @@ footer {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: calc(100vh - 147px);
+        height: calc(120px + 67px);
+        z-index: 14;
     }
     .box_infomation.on {
-        height: calc(100vh - 664px);
+        height: 100%;
     }
     .box_infomation .box_info_header {
         position: relative;
@@ -4679,12 +4714,16 @@ footer {
         height: 10px;
         border: 2px solid #000;
         border-width: 0 2px 2px 0;
-        margin-top: -10px;
-        transform: rotate(45deg);
+        margin-top: -4px;
+        transform: rotate(-135deg);
     }
     .box_infomation.on .box_info_header::after {
-        transform: rotate(-135deg);
-        margin-top: -4px;
+        transform: rotate(45deg);
+        margin-top: -10px;
+    }
+    
+    .box_infomation .box_info_content > ul {
+        height: calc(100vh - 215px);
     }
     .box_map_pin .box_info_content .tit_group .info {
         display: none;
