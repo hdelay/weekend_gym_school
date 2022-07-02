@@ -7,10 +7,12 @@
     <title>신나는 주말체육학교</title>
 
     <!-- pub:css -->
+    <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <!-- pub:js -->
     <script defer src="../js/jquery-3.6.0.js"></script>
+    <script defer src="../js/jquery-ui.js"></script>
     <script defer src="../js/root.js"></script>
     <script defer src="../js/common.js"></script>
 
@@ -247,7 +249,7 @@
                                     <span></span>
                                 </div>
                                 <div class="box_input search">
-                                    <input type="text" placeholder="검색어를 입력하세요">
+                                    <input type="text" id="autocomplete" placeholder="검색어를 입력하세요">
                                     <span></span>
                                 </div>
                                 <div class="box_btn">
@@ -381,5 +383,34 @@
         </div>
     </footer>
 </div>
+<script>
+    var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+</script>
 </body>
 </html>
