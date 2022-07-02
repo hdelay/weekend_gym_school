@@ -357,4 +357,21 @@ $('.box_map_group .close').on('click', function(e){
     e.preventDefault();
     $(this).parent().parent().hide();
 });
+
+// 체크박스 전체동의
+$("#cbx_chkAll").click(function() {
+    if($("#cbx_chkAll").is(":checked")) $("input[name=chk]").prop("checked", true);
+    else $("input[name=chk]").prop("checked", false);
+});
+
+$("input[name=chk]").click(function() {
+    const total = $("input[name=chk]").length;
+    const checked = $("input[name=chk]:checked").length;
+
+    if(total != checked) {
+        $("#cbx_chkAll").prop("checked", false);
+    } else {
+        $("#cbx_chkAll").prop("checked", true); 
+    }
+});
   
