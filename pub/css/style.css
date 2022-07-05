@@ -94,6 +94,15 @@ body, .wrap {
     background-size: 20px;
     color: #000;
 }
+.box_tit h6 strong + .box_btn .btn_remove {
+    height: auto;
+    padding-left: 25px;
+    box-sizing: border-box;
+    background: url(../images/ico/ico_delete.png) no-repeat 0 center;
+    background-color: #fff;
+    background-size: 20px;
+    color: #000;
+}
 
 /* 리스트 */
 .box_sub_list {
@@ -116,6 +125,18 @@ body, .wrap {
 }
 .box_sub_list ul li.remark::before {
     content: "* ";
+}
+
+.box_guide_list {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 75px;
+    padding: 20px;
+    border: 1px dashed rgb(204 204 204);
+}
+.box_guide_list .guide_txt {
+    text-align: center;
+    color: rgb(153 153 153);
 }
 
 /* header */
@@ -2993,8 +3014,7 @@ span.remark {
 }
 .box_info_content .tit_group .tit {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
 }
 .box_info_content .tit_group .tit dt {
     width: 50px;
@@ -3015,19 +3035,33 @@ span.remark {
     background-color: rgb(214 214 219);
 }
 .box_info_content .tit_group .tit dd {
+    width: calc(100% - 90px);
     font-weight: 600;
 }
 .box_info_content .tit_group .info {
     max-width: 80%;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 .box_info_content .tit_group .info span {
     display: block;
     width: 100%;
-    margin-top: 5px;
     white-space: break-spaces;
     font-size: 12px;
     color: rgb(153 153 153);
+}
+.box_info_content .tit_group .info span.event {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box_info_content .tit_group .info span.event span {
+    display: block;
+    width: auto;
+    font-weight: 500;
+    color: var(--sub-btn-color);
+}
+.box_info_content .tit_group .info span.event span + span {
+    margin-left: 10px;
 }
 .box_info_content .tit_group .pin {
     position: absolute;
@@ -3058,6 +3092,9 @@ span.remark {
 .box_info_content .list li + li {
     margin-top: 5px;
 }
+.box_info_content .list li.list_mo {
+    display: none;
+}
 .box_info_content .list li a {
     display: flex;
     position: relative;
@@ -3067,6 +3104,7 @@ span.remark {
     background-color: rgb(243 243 245);
     font-size: 12px;
     color: rgb(153 153 153);
+    transition: .2s;
 }
 .box_info_content .list li a::after {
     content: "";
@@ -3083,6 +3121,7 @@ span.remark {
 .box_info_content .list li a span {
     display: block;
     max-width: 80%;
+    white-space: break-spaces;
 }
 .box_infomation .box_btn {
     width: 100%;
@@ -3096,10 +3135,11 @@ span.remark {
 .box_infomation .box_btn a + a {
     margin-left: 10px;
 }
+
 .box_map_pin {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: -290px;
+    left: -123px;
     padding: 15px;
     box-sizing: border-box;
     width: 240px;
@@ -3120,10 +3160,11 @@ span.remark {
 }
 .box_map_pin .pin {
     position: absolute;
-    top: -43px;
-    left: -16px;
+    bottom: -66px;
+    left: 50%;
     width: 31px;
     height: 45px;
+    margin-left: -12px;
     background: no-repeat center;
     background-size: 100%;
 }
@@ -3146,7 +3187,7 @@ span.remark {
 }
 .box_map_pin .list {
     overflow-x: auto;
-    max-height: 142px;
+    height: 100px;
     margin-right: -5px;
     padding-right: 5px;
     scrollbar-color: var(--sub-btn-color) rgb(214 214 219);
@@ -3167,6 +3208,17 @@ span.remark {
 .box_map_pin .list::-webkit-scrollbar-thumb {
     background-color: var(--sub-btn-color);
     border-radius: 6px;
+}
+.box_map_pin .list li:hover a {
+    background-color: var(--sub-btn-color);
+    color: #fff;
+}
+.box_map_pin .list li:hover a::after {
+    border-color: #fff;
+}
+.box_map_pin .tit_group .tit dd {
+    width: calc(100% - 55px);
+    white-space: break-spaces;
 }
 
 /* 개인정보활용동의 */
@@ -3675,6 +3727,15 @@ footer {
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    .box_guide_list {
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+    }
+    .box_guide_list .guide_txt {
+        word-break: keep-all;
+        font-size: 14px;
     }
 
     /* 타이틀 */
@@ -5261,6 +5322,9 @@ footer {
     .box_infomation .box_info_content > ul {
         height: calc(100vh - 215px);
     }
+    .box_map_pin {
+        top: -137px;
+    }
     .box_map_pin .box_info_content .tit_group .info {
         display: none;
     }
@@ -5269,6 +5333,9 @@ footer {
     }
     .box_map_pin .box_info_content .tit_group .tit dd {
         font-size: 14px;
+    }
+    .box_map_pin .list {
+        height: 43px;
     }
     .box_map_pin .box_info_content .list li {
         display: none;
