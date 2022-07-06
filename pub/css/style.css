@@ -2917,7 +2917,7 @@ span.remark {
 } */
 .box_infomation {
     position: absolute;
-    bottom: 15px;
+    bottom: 25px;
     left: 15px;
     width: 386px;
     background-color: #fff;
@@ -3063,6 +3063,11 @@ span.remark {
 .box_info_content .tit_group .info span.event span + span {
     margin-left: 10px;
 }
+.box_info_content .tit_group .info span.event em {
+    margin-left: 5px;
+    font-weight: 500;
+    color: rgb(255 0 0);
+}
 .box_info_content .tit_group .pin {
     position: absolute;
     top: 0;
@@ -3106,6 +3111,14 @@ span.remark {
     color: rgb(153 153 153);
     transition: .2s;
 }
+.box_info_content .list li a::before {
+    content: "상세보기";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-57%);
+}
 .box_info_content .list li a::after {
     content: "";
     display: block;
@@ -3120,7 +3133,7 @@ span.remark {
 }
 .box_info_content .list li a span {
     display: block;
-    max-width: 80%;
+    max-width: 115px;
     white-space: break-spaces;
 }
 .box_infomation .box_btn {
@@ -3134,6 +3147,10 @@ span.remark {
 }
 .box_infomation .box_btn a + a {
     margin-left: 10px;
+}
+.box_info_content .list li .blue {
+    font-weight: 500;
+    color: var(--sub-btn-color);
 }
 
 .box_map_pin {
@@ -3168,6 +3185,7 @@ span.remark {
     background: no-repeat center;
     background-size: 100%;
 }
+/* 20220706 개발요청으로 삭제
 .box_map_pin .pin::after {
     content: "";
     display: block;
@@ -3184,7 +3202,7 @@ span.remark {
 }
 .box_map_pin.black .pin {
     background-image: url(../images/ico/ico_map_pin_black.png);
-}
+} */
 .box_map_pin .list {
     overflow-x: auto;
     height: 100px;
@@ -3350,6 +3368,52 @@ span.remark {
 }
 .box_pop_content.type_01 .table_data table tbody tr td {
     white-space: inherit;
+}
+
+/* 팝업공통 */
+.pop_common_wrap .pop_header {
+    padding: 35px 0 10px 0;
+    margin: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(204 204 204);
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+.pop_common_wrap .pop_content {
+    max-height: calc(100vh - 194px);
+    margin: 5px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-color: var(--sub-btn-color) rgb(214 214 219);
+    scrollbar-width:
+}
+.pop_common_wrap .pop_content::-webkit-scrollbar {
+    width: 14px;
+    border-radius: 20px;
+}
+.pop_common_wrap .pop_content::-webkit-scrollbar-track {
+    background-color: rgb(214 214 219);
+    border-radius: 14px;
+}
+.pop_common_wrap .pop_content::-webkit-scrollbar-thumb {
+    background-color: var(--sub-btn-color);
+    border-radius: 14px;
+}
+.pop_common_wrap  .pop_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    background-color: rgb(243 243 245);
+}
+.pop_common_wrap  .pop_footer .right .box_btn {
+    width: 195px;
+}
+.pop_common_wrap  .pop_footer .right .box_btn * {
+    height: 50px;
 }
 
 /* 신청확인 팝업 */
@@ -5432,6 +5496,14 @@ footer {
     .box_pop_btn {
         justify-content: center;
         padding: 20px 0;
+    }
+
+    /* 팝업공통 */
+    .pop_common_wrap .pop_footer .left .box_chk label {
+        font-size: 14px;
+    }
+    .pop_common_wrap .pop_footer .right .box_btn {
+        width: 109px;
     }
 
     /* 신청확인 팝업 */
