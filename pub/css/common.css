@@ -186,6 +186,12 @@
 .box_btn.right {
     justify-content: right;
 }
+.box_btn .btn_sky {
+    background-color: rgb(145 200 255);
+}
+.box_btn .btn_sky:hover {
+    background-color: rgb(116, 186, 255);
+}
 
 /* 리스트 */
 .box_text_list {
@@ -615,9 +621,10 @@ select::-ms-expand {
     padding: 15px 10px;
     border-bottom: 1px solid #ddd;
     font-size: var(--font-s);
+    /* 개발요청으로 인한 삭제
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 }
 .table_data table .num {
     text-align: center;

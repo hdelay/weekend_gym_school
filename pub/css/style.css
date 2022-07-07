@@ -308,8 +308,14 @@ header > nav > ul > li ul li:hover a::after {
     background: url(../images/ico/ico_login.png) no-repeat left center;
 }
 .box_info li.box_info_name {
-    font-weight: 600;
     color: #fff;
+}
+.box_info li.box_info_name a {
+    display: flex;
+    padding-left: 22px;
+    box-sizing: border-box;
+    background: url(../images/ico/ico_login.png) no-repeat left center;
+    font-weight: 600;
 }
 .box_info li.btn_logout a {
     display: flex;
@@ -1305,6 +1311,17 @@ header > nav > ul > li ul li:hover a::after {
     flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
+}
+.box_detail_info .inner .left .box_detail_info_btn {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.box_detail_info .inner .left .box_detail_info_btn > * {
+    flex: 1;
+}
+.box_detail_info .inner .left .box_detail_info_btn > * + * {
+    margin-left: 10px;
 }
 .box_detail_info .inner .img {
     display: flex;
@@ -3118,6 +3135,8 @@ span.remark {
     top: 50%;
     right: 30px;
     transform: translateY(-57%);
+    color: rgb(153 153 153);
+    font-weight: normal;
 }
 .box_info_content .list li a::after {
     content: "";
@@ -3237,6 +3256,20 @@ span.remark {
 .box_map_pin .tit_group .tit dd {
     width: calc(100% - 55px);
     white-space: break-spaces;
+}
+/* 개발요청으로 코드 추가 0707 */
+.box_map_pin .list .hoverList {
+    background-color: var(--sub-btn-color);
+    color: #fff !important;
+}
+.box_map_pin .list .hoverList::before {
+    color: #fff;
+}
+.box_map_pin .list .hoverList::after{
+    border-color: #fff;
+}
+.box_map_pin .list li:hover a::before {
+    color: #fff;
 }
 
 /* 개인정보활용동의 */
@@ -3387,7 +3420,7 @@ span.remark {
     box-sizing: border-box;
     overflow-y: auto;
     scrollbar-color: var(--sub-btn-color) rgb(214 214 219);
-    scrollbar-width:
+    scrollbar-width: 14px;
 }
 .pop_common_wrap .pop_content::-webkit-scrollbar {
     width: 14px;
@@ -3681,6 +3714,9 @@ footer {
 
 @media screen and (max-width: 1500px) {
     /* header */
+    header {
+        padding: 0 20px;
+    }
     header > nav > ul > li > a {
         padding: 0 16px;
         font-size: 16px;
@@ -4488,6 +4524,14 @@ footer {
     }
     .box_detail_info .inner {
         position: relative;
+    }
+    .box_detail_info .inner .left {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .box_detail_info .inner .left .box_detail_info_btn {
+        margin-bottom: 10px;
     }
     .box_detail_info .inner .img {
         width: 199px;
