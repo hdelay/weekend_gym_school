@@ -1386,6 +1386,7 @@ header > nav > ul > li ul li:hover a::after {
 }
 .box_detail_program_info .inner .manager_info .img {
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
     width: 287px;
@@ -2920,6 +2921,14 @@ span.remark {
     font-size: 24px;
     font-weight: 600;
     color: var(--sub-btn-color);
+}
+.inquiry.box_btn {
+    margin-top: 60px;
+}
+.inquiry.box_btn a {
+    flex: 1;
+    min-width: 0;
+    max-width: 195px;
 }
 
 /* 지도 */
@@ -5400,10 +5409,11 @@ footer {
         left: 0;
         width: 100%;
         height: calc(120px + 67px);
-        z-index: 15;
+        z-index: 14;
     }
     .box_infomation.on {
         height: 100%;
+        z-index: 15;
     }
     .box_infomation .box_info_header {
         position: relative;
@@ -5500,7 +5510,7 @@ footer {
         width: calc(100% - 92px);
     }
     .box_pop_content.type_01 .table_row table tbody tr.half td {
-        width: calc(50% - 92px);
+        width: calc(50% - 84px);
     }
     .box_pop_content.type_01 .table_row table tbody tr.pc_hidden {
         display: flex !important;

@@ -1111,9 +1111,10 @@ a.ui-button:active
     .table_row table tbody tr td {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         width: calc(100% - 77px);
         box-sizing: border-box;
-        padding: 20px;
+        padding: 10px;
     }
     .table_row table tbody tr:first-child th:nth-child(3),
     .table_row table tbody tr:first-child td:nth-child(4) {
