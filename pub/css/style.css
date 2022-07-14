@@ -2062,10 +2062,10 @@ header > nav > ul > li ul li:hover a::after {
 }
 
 /* 공모전 */
-.box_list {
+/* .box_list {
     height: 1512px;
     overflow-y: hidden;
-}
+} */
 .box_list.on {
     height: auto;
 }
@@ -2186,9 +2186,9 @@ header > nav > ul > li ul li:hover a::after {
 }
 
 /* 홍보동영상 */
-.box_list.type_02 {
+/* .box_list.type_02 {
     height: 979px;
-}
+} */
 .box_list.type_02.on {
     height: auto;
 }
@@ -5098,10 +5098,10 @@ footer {
     }
 
     /* 공모전 */
-    .box_list {
+    /* .box_list {
         height: 2166px;
         overflow-y: hidden;
-    }
+    } */
     .box_list.on {
         height: auto;
     }
